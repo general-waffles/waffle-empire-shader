@@ -1,0 +1,393 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "cris_furnace_rb_items",
+
+  "smelting_filter_off_button_hover@creative_dx.tab_with_hover_text": {
+    "size": [ 26, 16 ],
+    "$hover_panel_text": "realmsInvitationScreen.undo",
+    "$tab_hover_texture": "recipe_book_java_dx.smelting_filter_off_button_hover"
+  },
+
+  "item_0@furnace_dx.items_tab": {
+    "size": [ 26, 16 ],
+    "$unchecked_control": "recipe_book_java_dx.smelting_filter_on_button_default",
+    "$unchecked_hover_control": "recipe_book_java_dx.smelting_filter_on_button_hover",
+    "$checked_control": "recipe_book_java_dx.smelting_filter_off_button_default",
+    "$checked_hover_control": "cris_furnace_rb_items.smelting_filter_off_button_hover",
+    "$toggle_default_state": true,
+    "$item_view": "item_0_toggle",
+    "$toggle_group_forced_index": 0
+  },
+
+  "item_1@furnace_dx.items_tab": {
+    "$hover_panel_text": "tile.glazedTerracotta.lime.name",
+    "$item_view": "($tab_mode + '_item_1_toggle')",
+    "$toggle_group_forced_index": 1,
+    "$item_value": 14745600
+  },
+
+  "item_2@furnace_dx.items_tab": {
+    "$hover_panel_text": "tile.glazedTerracotta.green.name",
+    "$item_view": "($tab_mode + '_item_2_toggle')",
+    "$toggle_group_forced_index": 2,
+    "$item_value": 15269888
+  },
+
+  "item_3@furnace_dx.items_tab": {
+    "$hover_panel_text": "tile.stone.stone.name",
+    "$item_view": "($tab_mode + '_item_3_toggle')",
+    "$toggle_group_forced_index": 3,
+    "$item_value": 65536
+  },
+
+  "item_4@furnace_dx.items_tab": {
+    "$hover_panel_text": "item.cooked_fish.name",
+    "$item_view": "($tab_mode + '_item_4_toggle')",
+    "$toggle_group_forced_index": 4,
+    "$item_value": 22937600
+  },
+
+  "item_5@furnace_dx.items_tab": {
+    "$hover_panel_text": "tile.glazedTerracotta.cyan.name",
+    "$item_view": "($tab_mode + '_item_5_toggle')",
+    "$toggle_group_forced_index": 5,
+    "$item_value": 15007744
+  },
+
+  "item_6@furnace_dx.items_tab": {
+    "$hover_panel_text": "item.muttonCooked.name",
+    "$item_view": "($tab_mode + '_item_6_toggle')",
+    "$toggle_group_forced_index": 6,
+    "$item_value": 27787264
+  },
+
+  "item_7@furnace_dx.items_tab": {
+    "$hover_panel_text": "item.iron_ingot.name",
+    "$item_view": "($tab_mode + '_item_7_toggle')",
+    "$toggle_group_forced_index": 7,
+    "$item_value": 17367040
+  },
+
+  "item_8@furnace_dx.items_tab": {
+    "$hover_panel_text": "item.diamond.name",
+    "$item_view": "($tab_mode + '_item_8_toggle')",
+    "$toggle_group_forced_index": 8,
+    "$item_value": 17301504
+  },
+
+  "item_9@furnace_dx.items_tab": {
+    "$hover_panel_text": "item.dye.green.name",
+    "$item_view": "($tab_mode + '_item_9_toggle')",
+    "$toggle_group_forced_index": 9,
+    "$item_value": 23003138
+  },
+
+  "item_10@furnace_dx.items_tab": {
+    "$hover_panel_text": "tile.glazedTerracotta.magenta.name",
+    "$item_view": "($tab_mode + '_item_10_toggle')",
+    "$toggle_group_forced_index": 10,
+    "$item_value": 14548992
+  },
+
+  "item_11@furnace_dx.items_tab": {
+    "$hover_panel_text": "item.dye.lime.name",
+    "$item_view": "($tab_mode + '_item_11_toggle')",
+    "$toggle_group_forced_index": 11,
+    "$item_value": 23003146
+  },
+
+  "item_12@furnace_dx.items_tab": {
+    "$hover_panel_text": "item.porkchop_cooked.name",
+    "$item_view": "($tab_mode + '_item_12_toggle')",
+    "$toggle_group_forced_index": 12,
+    "$item_value": 20971520
+  },
+
+  "item_13@furnace_dx.items_tab": {
+    "$hover_panel_text": "item.coal.name",
+    "$item_view": "($tab_mode + '_item_13_toggle')",
+    "$toggle_group_forced_index": 13,
+    "$item_value": 17235968
+  },
+
+  "item_14@furnace_dx.items_tab": {
+    "$hover_panel_text": "item.brick.name",
+    "$item_view": "($tab_mode + '_item_14_toggle')",
+    "$toggle_group_forced_index": 14,
+    "$item_value": 22020096
+  },
+
+  "item_15@furnace_dx.items_tab": {
+    "$hover_panel_text": "tile.glazedTerracotta.red.name",
+    "$item_view": "($tab_mode + '_item_15_toggle')",
+    "$toggle_group_forced_index": 15,
+    "$item_value": 15335424
+  },
+
+  "item_16@furnace_dx.items_tab": {
+    "$hover_panel_text": "item.chorus_fruit_popped.name",
+    "$item_view": "($tab_mode + '_item_16_toggle')",
+    "$toggle_group_forced_index": 16,
+    "$item_value": 28377088
+  },
+
+  "item_17@furnace_dx.items_tab": {
+    "$hover_panel_text": "item.baked_potato.name",
+    "$item_view": "($tab_mode + '_item_17_toggle')",
+    "$toggle_group_forced_index": 17,
+    "$item_value": 25755648
+  },
+
+  "item_18@furnace_dx.items_tab": {
+    "$hover_panel_text": "item.cooked_salmon.name",
+    "$item_view": "($tab_mode + '_item_18_toggle')",
+    "$toggle_group_forced_index": 18,
+    "$item_value": 30343168
+  },
+
+  "item_19@furnace_dx.items_tab": {
+    "$hover_panel_text": "tile.glazedTerracotta.light_blue.name",
+    "$item_view": "($tab_mode + '_item_19_toggle')",
+    "$toggle_group_forced_index": 19,
+    "$item_value": 14614528
+  },
+
+  "item_20@furnace_dx.items_tab": {
+    "$hover_panel_text": "tile.smooth_stone.name",
+    "$item_view": "($tab_mode + '_item_20_toggle')",
+    "$toggle_group_forced_index": 20,
+    "$item_value": -11993088
+  },
+
+  "item_21@furnace_dx.items_tab": {
+    "$hover_panel_text": "item.charcoal.name",
+    "$item_view": "($tab_mode + '_item_21_toggle')",
+    "$toggle_group_forced_index": 21,
+    "$item_value": 17235969
+  },
+
+  "item_22@furnace_dx.items_tab": {
+    "$hover_panel_text": "tile.cracked_nether_bricks.name",
+    "$item_view": "($tab_mode + '_item_22_toggle')",
+    "$toggle_group_forced_index": 22,
+    "$item_value": -19857408
+  },
+
+  "item_23@furnace_dx.items_tab": {
+    "$hover_panel_text": "item.iron_nugget.name",
+    "$item_view": "($tab_mode + '_item_23_toggle')",
+    "$toggle_group_forced_index": 23,
+    "$item_value": 29622272
+  },
+
+  "item_24@furnace_dx.items_tab": {
+    "$hover_panel_text": "tile.glazedTerracotta.silver.name",
+    "$item_view": "($tab_mode + '_item_24_toggle')",
+    "$toggle_group_forced_index": 24,
+    "$item_value": 14942208
+  },
+
+  "item_25@furnace_dx.items_tab": {
+    "$hover_panel_text": "tile.quartz_block.smooth.name",
+    "$item_view": "($tab_mode + '_item_25_toggle')",
+    "$toggle_group_forced_index": 25,
+    "$item_value": 10158083
+  },
+
+  "item_26@furnace_dx.items_tab": {
+    "$hover_panel_text": "tile.redstone_wire.name",
+    "$item_view": "($tab_mode + '_item_26_toggle')",
+    "$toggle_group_forced_index": 26,
+    "$item_value": 21692416
+  },
+
+  "item_27@furnace_dx.items_tab": {
+    "$hover_panel_text": "tile.glass.name",
+    "$item_view": "($tab_mode + '_item_27_toggle')",
+    "$toggle_group_forced_index": 27,
+    "$item_value": 1310720
+  },
+
+  "item_28@furnace_dx.items_tab": {
+    "$hover_panel_text": "tile.glazedTerracotta.black.name",
+    "$item_view": "($tab_mode + '_item_28_toggle')",
+    "$toggle_group_forced_index": 28,
+    "$item_value": 15400960
+  },
+
+  "item_29@furnace_dx.items_tab": {
+    "$hover_panel_text": "item.dye.blue.name",
+    "$item_view": "($tab_mode + '_item_29_toggle')",
+    "$toggle_group_forced_index": 29,
+    "$item_value": 23003140
+  },
+
+  "item_30@furnace_dx.items_tab": {
+    "$hover_panel_text": "tile.red_sandstone.smooth.name",
+    "$item_view": "($tab_mode + '_item_30_toggle')",
+    "$toggle_group_forced_index": 30,
+    "$item_value": 11730947
+  },
+
+  "item_31@furnace_dx.items_tab": {
+    "$hover_panel_text": "item.netherite_scrap.name",
+    "$item_view": "($tab_mode + '_item_31_toggle')",
+    "$toggle_group_forced_index": 31,
+    "$item_value": 49283072
+  },
+
+  "item_32@furnace_dx.items_tab": {
+    "$hover_panel_text": "tile.hardened_clay.name",
+    "$item_view": "($tab_mode + '_item_32_toggle')",
+    "$toggle_group_forced_index": 32,
+    "$item_value": 11272192
+  },
+
+  "item_33@furnace_dx.items_tab": {
+    "$hover_panel_text": "item.cooked_rabbit.name",
+    "$item_view": "($tab_mode + '_item_33_toggle')",
+    "$toggle_group_forced_index": 33,
+    "$item_value": 27000832
+  },
+
+  "item_34@furnace_dx.items_tab": {
+    "$hover_panel_text": "item.cooked_beef.name",
+    "$item_view": "($tab_mode + '_item_34_toggle')",
+    "$toggle_group_forced_index": 34,
+    "$item_value": 23855104
+  },
+
+  "item_35@furnace_dx.items_tab": {
+    "$hover_panel_text": "item.cooked_chicken.name",
+    "$item_view": "($tab_mode + '_item_35_toggle')",
+    "$toggle_group_forced_index": 35,
+    "$item_value": 23986176
+  },
+
+  "item_36@furnace_dx.items_tab": {
+    "$hover_panel_text": "item.quartz.name",
+    "$item_view": "($tab_mode + '_item_36_toggle')",
+    "$toggle_group_forced_index": 36,
+    "$item_value": 26607616
+  },
+
+  "item_37@furnace_dx.items_tab": {
+    "$hover_panel_text": "tile.glazedTerracotta.white.name",
+    "$item_view": "($tab_mode + '_item_37_toggle')",
+    "$toggle_group_forced_index": 37,
+    "$item_value": 14417920
+  },
+
+  "item_38@furnace_dx.items_tab": {
+    "$hover_panel_text": "item.dried_kelp.name",
+    "$item_view": "($tab_mode + '_item_38_toggle')",
+    "$toggle_group_forced_index": 38,
+    "$item_value": 30408704
+  },
+
+  "item_39@furnace_dx.items_tab": {
+    "$hover_panel_text": "tile.sandstone.smooth.name",
+    "$item_view": "($tab_mode + '_item_39_toggle')",
+    "$toggle_group_forced_index": 39,
+    "$item_value": 1572867
+  },
+
+  "item_40@furnace_dx.items_tab": {
+    "$hover_panel_text": "tile.glazedTerracotta.blue.name",
+    "$item_view": "($tab_mode + '_item_40_toggle')",
+    "$toggle_group_forced_index": 40,
+    "$item_value": 15138816
+  },
+
+  "item_41@furnace_dx.items_tab": {
+    "$hover_panel_text": "item.gold_ingot.name",
+    "$item_view": "($tab_mode + '_item_41_toggle')",
+    "$toggle_group_forced_index": 41,
+    "$item_value": 17432576
+  },
+
+  "item_42@furnace_dx.items_tab": {
+    "$hover_panel_text": "item.emerald.name",
+    "$item_view": "($tab_mode + '_item_42_toggle')",
+    "$toggle_group_forced_index": 42,
+    "$item_value": 25427968
+  },
+
+  "item_43@furnace_dx.items_tab": {
+    "$hover_panel_text": "tile.sponge.dry.name",
+    "$item_view": "($tab_mode + '_item_43_toggle')",
+    "$toggle_group_forced_index": 43,
+    "$item_value": 1245184
+  },
+
+  "item_44@furnace_dx.items_tab": {
+    "$hover_panel_text": "tile.glazedTerracotta.brown.name",
+    "$item_view": "($tab_mode + '_item_44_toggle')",
+    "$toggle_group_forced_index": 44,
+    "$item_value": 15204352
+  },
+
+  "item_45@furnace_dx.items_tab": {
+    "$hover_panel_text": "tile.glazedTerracotta.purple.name",
+    "$item_view": "($tab_mode + '_item_45_toggle')",
+    "$toggle_group_forced_index": 45,
+    "$item_value": 14352384
+  },
+
+  "item_46@furnace_dx.items_tab": {
+    "$hover_panel_text": "tile.glazedTerracotta.gray.name",
+    "$item_view": "($tab_mode + '_item_46_toggle')",
+    "$toggle_group_forced_index": 46,
+    "$item_value": 14876672
+  },
+
+  "item_47@furnace_dx.items_tab": {
+    "$hover_panel_text": "item.gold_nugget.name",
+    "$item_view": "($tab_mode + '_item_47_toggle')",
+    "$toggle_group_forced_index": 47,
+    "$item_value": 24313856
+  },
+
+  "item_48@furnace_dx.items_tab": {
+    "$hover_panel_text": "tile.glazedTerracotta.orange.name",
+    "$item_view": "($tab_mode + '_item_48_toggle')",
+    "$toggle_group_forced_index": 48,
+    "$item_value": 14483456
+  },
+
+  "item_49@furnace_dx.items_tab": {
+    "$hover_panel_text": "tile.cracked_polished_blackstone_bricks.name",
+    "$item_view": "($tab_mode + '_item_49_toggle')",
+    "$toggle_group_forced_index": 49,
+    "$item_value": -18350080
+  },
+  
+  "item_50@furnace_dx.items_tab": {
+    "$hover_panel_text": "tile.stonebrick.cracked.name",
+    "$item_view": "($tab_mode + '_item_50_toggle')",
+    "$toggle_group_forced_index": 50,
+    "$item_value": 6422530
+  },
+  
+  "item_51@furnace_dx.items_tab": {
+    "$hover_panel_text": "tile.glazedTerracotta.pink.name",
+    "$item_view": "($tab_mode + '_item_51_toggle')",
+    "$toggle_group_forced_index": 51,
+    "$item_value": 14811136
+  },
+  
+  "item_52@furnace_dx.items_tab": {
+    "$hover_panel_text": "item.netherbrick.name",
+    "$item_view": "($tab_mode + '_item_52_toggle')",
+    "$toggle_group_forced_index": 52,
+    "$item_value": 26542080
+  },
+  
+  "item_53@furnace_dx.items_tab": {
+    "$hover_panel_text": "tile.glazedTerracotta.yellow.name",
+    "$item_view": "($tab_mode + '_item_53_toggle')",
+    "$toggle_group_forced_index": 53,
+    "$item_value": 14680064
+  }
+}

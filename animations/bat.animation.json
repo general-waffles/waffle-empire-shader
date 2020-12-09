@@ -1,0 +1,90 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.bat.flying": {
+			"loop": true,
+			"bones": {
+				"Body": {
+					"rotation": ["45.0 - math.cos(query.life_time * 1489.6) * 8.59", 0, 0],
+					"position": [0, "math.cos(query.life_time * 343.774) * 1.6", 0]
+				},
+				"Head": {
+					"rotation": ["query.target_x_rotation", "query.target_y_rotation", 0],
+					"position": ["-this", "math.cos(query.life_time * 343.774) * 1.6 - this", "-this"]
+				},
+				"leftWing": {
+					"rotation": [35, "math.cos(query.life_time * 1489.6) * -45.0", 0],
+					"position": ["3-this", "-this", "-3-this"]
+				},
+				"leftWingTip": {
+					"rotation": [0, "math.cos(query.life_time * 1489.6) * -22.0", 0]
+				},
+				"rightWing": {
+					"rotation": [35, "math.cos(query.life_time * 1489.6) * 45.0", 0],
+					"position": ["-5-this", "0-this", "-3-this"]
+				},
+				"rightWingTip": {
+					"rotation": [0, "math.cos(query.life_time * 1489.6) * 22.0", 0]
+				},
+				"RightArm": {
+					"rotation": [-115, 0, 0]
+				},
+				"LeftArm": {
+					"rotation": [-135, 0, 0]
+				},
+				"RightLeg": {
+					"rotation": [42.5, 0, 0]
+				},
+				"rightEar": {
+					"position": [0, 0, -1]
+				},
+				"leftEar": {
+					"position": [0, 0, -1]
+				}
+			}
+		},
+		"animation.bat.resting": {
+			"loop": true,
+			"animation_length": 53.448,
+			"bones": {
+				"Body": {
+					"rotation": [180, 0, 0],
+					"position": [0, -0.035, 0]
+				},
+				"Head": {
+					"rotation": ["query.target_x_rotation", "180.0f - query.target_y_rotation", 180],
+					"position": [0, -0.035, 0]
+				},
+				"leftWing": {
+					"rotation": [-9, 72, 0],
+					"position": [3, 0, 3]
+				},
+				"leftWingTip": {
+					"rotation": [0, 99, 0]
+				},
+				"rightWing": {
+					"rotation": [-9, -72, 0],
+					"position": [-3, 0, 3]
+				},
+				"rightWingTip": {
+					"rotation": [0, -99, 0]
+				},
+				"RightArm": {
+					"rotation": [-20, 0, 0]
+				},
+				"LeftArm": {
+					"rotation": [-25, 0, 0]
+				},
+				"LeftLeg": {
+					"rotation": [-42.5, 0, 0]
+				},
+				"rightEar": {
+					"position": [0, 0, -1]
+				},
+				"leftEar": {
+					"position": [0, 0, -1]
+				}
+			}
+		}
+	}
+}

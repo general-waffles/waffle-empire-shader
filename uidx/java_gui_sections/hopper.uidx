@@ -1,0 +1,10 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "hopper_java_dx",
+
+  "dialog_bg_hopper@java_gui_common.crisxolt_image_panel": {
+    "$texture": "assets/minecraft/textures/gui/container/hopper",
+    "$uv_size": [ 176, 133 ]
+  }
+}

@@ -1,0 +1,119 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "stonecutter_java_dx",
+
+  "stonecutter_base@java_gui_common.crisxolt_image_panel": {
+    "$texture": "assets/minecraft/textures/gui/container/stonecutter"
+  },
+
+  /*////// Base //////*/
+
+  /* Stonecutter screen */
+
+  "dialog_bg_stonecutter@stonecutter_java_dx.stonecutter_base": {
+    "$uv_size": [ 176, 166 ]
+  },
+
+  /* Buttons */
+
+  "active_stone@stonecutter_java_dx.stonecutter_base": {
+    "$uv": [ 0, -166 ],
+    "$uv_size": [ 16, 18 ]
+  },
+
+  "dark_stone@stonecutter_java_dx.active_stone": {
+    "$uv": [ 0, -184 ]
+  },
+  "active_stone_hover@stonecutter_java_dx.active_stone": {
+    "$uv": [ 0, -202 ]
+  },
+  
+  /*//// Scroll Box ////*/
+  
+  "locked_scroll_box@stonecutter_java_dx.stonecutter_base": {
+    "$uv": [ -188, 0 ],
+    "$uv_size": [ 12, 15 ]
+  },
+  
+  "scroll_upper@stonecutter_java_dx.stonecutter_base": {
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "$uv": [ -176, 0 ],
+    "$uv_size": [ 12, 6 ]
+  },
+  
+  "scroll_middle@stonecutter_java_dx.stonecutter_base": {
+    "$uv": [ -176, -6 ],
+    "$uv_size": [ 12, 2 ]
+  },
+  
+  "scroll_bottom@stonecutter_java_dx.stonecutter_base": {
+    "anchor_from": "bottom_left",
+    "anchor_to": "bottom_left",
+    "$uv": [ -176, -8 ],
+    "$uv_size": [ 12, 7 ]
+  },
+
+  "scroll_middle_stack_panel": {
+    "type": "stack_panel",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset": [ 0, 6 ],
+    "size": [ 12, "100%-11px" ],
+    "clips_children": true,
+    "controls": [
+      { "00@stonecutter_java_dx.scroll_middle": { } },
+      { "01@stonecutter_java_dx.scroll_middle": { } },
+      { "02@stonecutter_java_dx.scroll_middle": { } },
+      { "03@stonecutter_java_dx.scroll_middle": { } },
+      { "04@stonecutter_java_dx.scroll_middle": { } },
+      { "05@stonecutter_java_dx.scroll_middle": { } },
+      { "06@stonecutter_java_dx.scroll_middle": { } },
+      { "07@stonecutter_java_dx.scroll_middle": { } },
+      { "08@stonecutter_java_dx.scroll_middle": { } },
+      { "09@stonecutter_java_dx.scroll_middle": { } },
+      { "10@stonecutter_java_dx.scroll_middle": { } },
+      { "11@stonecutter_java_dx.scroll_middle": { } },
+      { "12@stonecutter_java_dx.scroll_middle": { } },
+      { "13@stonecutter_java_dx.scroll_middle": { } },
+      { "14@stonecutter_java_dx.scroll_middle": { } },
+      { "15@stonecutter_java_dx.scroll_middle": { } },
+      { "16@stonecutter_java_dx.scroll_middle": { } },
+      { "17@stonecutter_java_dx.scroll_middle": { } },
+      { "18@stonecutter_java_dx.scroll_middle": { } },
+      { "19@stonecutter_java_dx.scroll_middle": { } },
+      { "20@stonecutter_java_dx.scroll_middle": { } },
+      { "21@stonecutter_java_dx.scroll_middle": { } },
+      { "22@stonecutter_java_dx.scroll_middle": { } },
+      { "23@stonecutter_java_dx.scroll_middle": { } },
+      { "24@stonecutter_java_dx.scroll_middle": { } },
+      { "25@stonecutter_java_dx.scroll_middle": { } },
+      { "26@stonecutter_java_dx.scroll_middle": { } },
+      { "27@stonecutter_java_dx.scroll_middle": { } },
+      { "28@stonecutter_java_dx.scroll_middle": { } },
+      { "29@stonecutter_java_dx.scroll_middle": { } },
+      { "30@stonecutter_java_dx.scroll_middle": { } },
+      { "31@stonecutter_java_dx.scroll_middle": { } },
+      { "32@stonecutter_java_dx.scroll_middle": { } },
+      { "33@stonecutter_java_dx.scroll_middle": { } },
+      { "34@stonecutter_java_dx.scroll_middle": { } },
+      { "35@stonecutter_java_dx.scroll_middle": { } },
+      { "36@stonecutter_java_dx.scroll_middle": { } },
+      { "37@stonecutter_java_dx.scroll_middle": { } },
+      { "38@stonecutter_java_dx.scroll_middle": { } },
+      { "39@stonecutter_java_dx.scroll_middle": { } },
+      { "40@stonecutter_java_dx.scroll_middle": { } }
+    ]
+  },
+
+  "scroll_box": {
+    "type": "panel",
+    "size": [ 12, "100%" ],
+    "controls": [
+      { "scroll_upper@stonecutter_java_dx.scroll_upper": { } },
+      { "scroll_middle_stack_panel@stonecutter_java_dx.scroll_middle_stack_panel": { } },
+      { "scroll_scroll_bottom@stonecutter_java_dx.scroll_bottom": { } }
+    ]
+  }
+}

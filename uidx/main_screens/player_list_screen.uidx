@@ -1,0 +1,495 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "player_list_dx",
+
+  /*////// PLAYER PANEL //////*/
+
+  "player_list_panel": {
+    "type": "stack_panel",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "offset": [ 0, 20 ],
+    "size": [ 123, "267" ],
+    "controls": [
+      {
+        "top_panel": {
+          "type": "panel",
+          "layer": 1,
+          "size": [ 123, 11 ],
+          "controls": [
+            {
+              "players_label": {
+                "type": "label",
+                "text": "#worldname",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "size": [ "default", 11 ],
+                "color": "$main_menu_button_default_color",
+                "layer": 2,
+                "bindings": [
+                  {
+                    "binding_name": "#worldname"
+                  }
+                ]
+              }
+            },
+            {
+              "panel@player_list_dx.player_list_grid_image": {
+                "texture": "textures/uidx/player_list",
+                "size": [ 123, 11 ],
+                "layer": 1
+              }
+            }
+          ]
+        }
+      },
+      {
+        "normal_list_panel": {
+          "type": "panel",
+          "size": [ 123, "100%c" ],
+          "controls": [
+            { "player_list_scrolling_panel@player_list_dx.player_list_scrolling_panel": {} }
+          ],
+          "bindings": [
+            {
+              "binding_name": "(not #list_has_display_objective)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "scoreboard_objective_panel": {
+          "type": "panel",
+          "layer": 1,
+          "size": [ 123, 11 ],
+          "controls": [
+            {
+              "players_label@scoreboard.list_objective_label": {
+                "shadow": true,
+                "color": "$main_header_text_color",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "size": [ "default", 10 ],
+                "layer": 2
+              }
+            },
+            {
+              "panel@player_list_dx.player_list_grid_image": {
+                "texture": "textures/uidx/player_list_score",
+                "size": [ 123, 11 ],
+                "layer": 1
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#list_has_display_objective",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "score_list_panel": {
+          "type": "panel",
+          "size": [ 123, "100%c" ],
+          "controls": [
+            {
+              "player_list_scrolling_panel@player_list_dx.player_list_scrolling_panel": {
+                "$scrolling_content": "player_list_dx.players_grid_score_panel"
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#list_has_display_objective",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "player_list_scrolling_panel@common_scroll_dx.scrolling_panel": {
+    "size": [ 123, 162 ],
+    "anchor_to": "top_middle",
+    "anchor_from": "top_middle",
+    "$bg": "common_dx.null_panel",
+    "$scroll_view_port_size": [ 123, "100%" ],
+    "$scrolling_content": "player_list_dx.players_grid_panel",
+    "$scroll_box_mouse_image_control": "chat_dx.scroll_box",
+    "$scroll_box_touch_image_control": "chat_dx.scroll_box",
+    "$scroll_size": [ 4, "100%" ]
+  },
+
+  "players_grid_score_panel": {
+    "type": "stack_panel",
+    "size": [ 123, "100%c" ],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "$is_scoreboard": true,
+    "controls": [
+      {
+        "scored_players_grid_panel@scoreboard.players_scored_grid_list": {
+          "factory": {
+            "name": "scored_list_factory",
+            "control_name": "player_list_dx.player_grid_item"
+          }
+        }
+      },
+      {
+        "unscored_players_grid_panel@scoreboard.players_unscored_grid_list": {
+          "factory": {
+            "name": "scored_list_factory",
+            "control_name": "player_list_dx.player_grid_item"
+          }
+        }
+      }
+    ]
+  },
+
+  "players_grid_panel": {
+    "type": "panel",
+    "size": [ 123, "100%c" ],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "controls": [
+      {
+        "players_grid@pause.players_grid": {
+          "grid_item_template": "player_list_dx.player_grid_item"
+        }
+      }
+    ]
+  },
+
+  "player_list_grid_image": {
+    "type": "image",
+    "texture": "textures/uidx/player_list_grid",
+    "size": [ 123, 9 ],
+    "anchor_to": "top_left",
+    "anchor_from": "top_left",
+    "layer": 1
+  },
+
+  "player_grid_item": {
+    "type": "panel",
+    "layer": 1,
+    "size": [ 123, 9 ],
+    "$is_scoreboard|default": false,
+    "controls": [
+      { "player_grid_stack_panel@player_list_dx.player_grid_stack_panel": { "ignored": "$is_scoreboard" } },
+      { "player_grid_score_stack_panel@player_list_dx.player_grid_score_stack_panel": { "ignored": "(not $is_scoreboard)" } },
+      {
+        "player_permission_button_panel": {
+          "type": "panel",
+          "controls": [
+            {
+              "permission_button@common.button": {
+                "size": [ 111, 9 ],
+                "layer": 2,
+                "$pressed_button_name": "button.menu_permission",
+                "bindings": [
+                  {
+                    "binding_type": "collection_details",
+                    "binding_collection_name": "players_collection"
+                  }
+                ],
+                "controls": [
+                  {
+                    "hover": {
+                      "type": "image",
+                      "anchor_from": "top_middle",
+                      "anchor_to": "top_middle",
+                      "size": [ 111, 8 ],
+                      "alpha": 0.25,
+                      "texture": "textures/uidx/white"
+                    }
+                  }
+                ]
+              }
+            }
+          ]/* ,
+          "bindings": [
+            {
+              "binding_name": "#permissions_button_visible",
+              "binding_name_override": "#visible"
+            }
+          ] */
+        }
+      },
+      { "panel@player_list_dx.player_list_grid_image": { } }
+    ]
+  },
+
+  "player_grid_score_stack_panel@player_list_dx.player_grid_stack_panel": {
+    "controls": [
+      {
+        "padding_score_0": {
+          "type": "panel",
+          "size": [ "100%c", 8 ],
+          "controls": [
+            {
+              "player_rank": {
+                "type": "label",
+                "color": "$player_list_rank_color",
+                "anchor_to": "top_left",
+                "anchor_from": "top_left",
+                "offset": [ 0, -1 ],
+                "shadow": true,
+                "text": "#player_rank",
+                "layer": 1,
+                "bindings": [
+                  {
+                    "binding_name": "#player_rank",
+                    "binding_type": "collection",
+                    "binding_collection_name": "$sb_collection_name"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "padding_score_1": {
+          "type": "panel",
+          "size": [ "100%c", 8 ],
+          "ignored": "(not $has_score)",
+          "controls": [
+            {
+              "separator": {
+                "type": "label",
+                "color": "$player_list_rank_color",
+                "anchor_to": "top_left",
+                "anchor_from": "top_left",
+                "text": "-",
+                "offset": [ 0, -1 ],
+                "shadow": true
+              }
+            }
+          ]
+        }
+      },
+      {
+        "padding_score_separator": {
+          "type": "panel",
+          "ignored": "(not $has_score)",
+          "size": [ 1, 8 ]
+        }
+      },
+      {
+        "scoreboard_player_pic_panel": {
+          "type": "panel",
+          "size": [ "100%c", 8 ],
+          "controls": [
+            {
+              "player_gamer_pic@player_list_dx.player_gamer_pic": {
+                "bindings": [
+                  {
+                    "binding_name": "#player_icon",
+                    "binding_type": "collection",
+                    "binding_collection_name": "$sb_collection_name",
+                    "binding_name_override": "#texture"
+                  },
+                  {
+                    "binding_name": "#player_icon_filesystem",
+                    "binding_type": "collection",
+                    "binding_collection_name": "$sb_collection_name",
+                    "binding_name_override": "#texture_file_system"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "padding_2": {
+          "type": "panel",
+          "size": [ 1, 8 ]
+        }
+      },
+      {
+        "padding_score_gamertag": {
+          "type": "panel",
+          "size": [ "100%c", 8 ],
+          "controls": [
+            {
+              "player_gamertag@scoreboard.player_name": {
+                "size": [ "default", 10 ],
+                "color": [ 0.6667, 0.6667, 0.6667 ],
+                "anchor_to": "top_left",
+                "anchor_from": "top_left",
+                "offset": [ 0, -1 ],
+                "shadow": true
+              }
+            }
+          ]
+        }
+      },
+      {
+        "padding_score_2": {
+          "type": "panel",
+          "size": [ "fill", 8 ]
+        }
+      },
+      {
+        "padding_score_3": {
+          "type": "panel",
+          "size": [ "100%c", 8 ],
+          "controls": [
+            {
+              "score@scoreboard.player_score": {
+                "size": [ "default", 10 ],
+                "color": "$player_score_color",
+                "anchor_to": "top_left",
+                "anchor_from": "top_left",
+                "offset": [ 0, -1 ],
+                "shadow": true
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "player_grid_stack_panel": {
+    "type": "stack_panel",
+    "size": [ 111, 8 ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset": [ 6, 0 ],
+    "orientation": "horizontal",
+    "layer": 4,
+    "controls": [
+      {
+        "player_pic_panel": {
+          "type": "panel",
+          "size": [ "100%c", 8 ],
+          "controls": [
+            { "player_gamer_pic@player_list_dx.player_gamer_pic": {} },
+            { "player_local_icon@player_list_dx.player_local_icon": {} }
+          ]
+        }
+      },
+      {
+        "padding_2": {
+          "type": "panel",
+          "size": [ 1, 8 ]
+        }
+      },
+      {
+        "padding_3": {
+          "type": "panel",
+          "size": [ "fill", 8 ],
+          "controls": [
+            {
+              "player_gamertag@pause.player_gamertag": {
+                "color": [ 0.6667, 0.6667, 0.6667 ],
+                "anchor_to": "top_left",
+                "anchor_from": "top_left",
+                "offset": [ 0, -1 ],
+                "shadow": true
+              }
+            }
+          ]
+        }
+      },
+      {
+        "permission_level_panel": {
+          "type": "panel",
+          "size": [ 8, 8 ],
+          "controls": [
+            {
+              "operator_icon@realms_java_dx.op_icon_default": {
+                "size": [ 8, 8 ],
+                "bindings": [
+                  {
+                    "binding_name": "(#player_permission_level_icon_texture = 'textures/ui/permissions_op_crown')",
+                    "binding_name_override": "#visible",
+                    "binding_type": "collection",
+                    "binding_collection_name": "players_collection"
+                  }
+                ]
+              }
+            },
+            {
+              "user_icon@realms_java_dx.user_icon_default": {
+                "size": [ 8, 8 ],
+                "bindings": [
+                  {
+                    "binding_name": "(#player_permission_level_icon_texture = 'textures/ui/permissions_member_star')",
+                    "binding_name_override": "#visible",
+                    "binding_type": "collection",
+                    "binding_collection_name": "players_collection"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "player_local_icon": {
+    "type": "image",
+    "texture": "textures/uidx/lan_icon",
+    "size": [ 8, 8 ],
+    "layer": 1,
+    "bindings": [
+      {
+        "binding_name": "#local_icon_visible",
+        "binding_type": "collection",
+        "binding_collection_name": "players_collection",
+        "binding_name_override": "#visible"
+      }
+    ]
+  },
+
+  "player_gamer_pic": {
+    "type": "image",
+    "texture": "#texture",
+    "size": [ 8, 8 ],
+    "layer": 1,
+    "texture_file_system": "#texture_source",
+    "bindings": [
+      {
+        "binding_name": "#texture",
+        "binding_type": "collection",
+        "binding_collection_name": "players_collection"
+      },
+      {
+        "binding_name": "#texture_source",
+        "binding_name_override": "#texture_file_system",
+        "binding_type": "collection",
+        "binding_collection_name": "players_collection"
+      },
+      {
+        "binding_name": "#gamerpic_visible",
+        "binding_type": "collection",
+        "binding_collection_name": "players_collection",
+        "binding_name_override": "#visible"
+      }
+    ]
+  },
+
+  /*////// BOTTOM PANEL //////*/
+
+  "bottom_panel_content": {
+    "type": "panel",
+    "size": [ 200, 20 ],
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "offset": [ 0, -20 ],
+    "controls": [
+      {
+        "main_panel_list_toggle@pause_dx.main_panel_list_toggle": {}
+      }
+    ]
+  }
+}

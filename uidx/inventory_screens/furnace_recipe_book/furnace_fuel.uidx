@@ -1,0 +1,211 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "furnace_fuel_dx",
+
+  /*//// Fuel animation ////*/
+  
+  "fuel_items": {
+    "type": "panel",
+    "size": [ 16, 16 ],
+    "clips_children": true,
+    "controls": [
+      {
+        "coal@furnace_dx.item_renderer_overlay": {
+          "layer": 3,
+          "$not_visible_duration_1": 3,
+          "$not_visible_duration_2": 3,
+          "offset": "@furnace_fuel_dx.item_visible",
+          "$item_value": 17235968
+        }
+      },
+      {
+        "charcoal@furnace_dx.item_renderer_overlay": {
+          "layer": 3,
+          "$not_visible_duration_1": 5,
+          "$not_visible_duration_2": 1,
+          "offset": "@furnace_fuel_dx.item_not_visible_2",
+          "$item_value": 17235969
+        }
+      },
+      {
+        "bucket_lava@furnace_dx.item_renderer_overlay": {
+          "layer": 3,
+          "$not_visible_duration_1": 4,
+          "$not_visible_duration_2": 2,
+          "offset": "@furnace_fuel_dx.item_not_visible_2",
+          "$item_value": 21299210
+        }
+      },
+      {
+        "oak_plank@furnace_dx.item_renderer_overlay": {
+          "layer": 3,
+          "$not_visible_duration_1": 3,
+          "$not_visible_duration_2": 3,
+          "offset": "@furnace_fuel_dx.item_not_visible_2",
+          "$item_value": 327680
+        }
+      },
+      {
+        "oak_log@furnace_dx.item_renderer_overlay": {
+          "layer": 3,
+          "$not_visible_duration_1": 2,
+          "$not_visible_duration_2": 4,
+          "offset": "@furnace_fuel_dx.item_not_visible_2",
+          "$item_value": 1114112
+        }
+      },
+      {
+        "oak_stripped@furnace_dx.item_renderer_overlay": {
+          "layer": 3,
+          "$not_visible_duration_1": 1,
+          "$not_visible_duration_2": 5,
+          "offset": "@furnace_fuel_dx.item_not_visible_2",
+          "$item_value": -655360
+        }
+      },
+      {
+        "blaze_rod@furnace_dx.item_renderer_overlay": {
+          "layer": 3,
+          "$not_visible_duration_1": 3,
+          "$not_visible_duration_2": 3,
+          "offset": "@furnace_fuel_dx.item_not_visible_1",
+          "$item_value": 24182784
+        }
+      }
+    ]
+  },
+
+  "item_visible": {
+    "anim_type": "offset",
+    "from": [ 0, 0 ],
+    "to": [ 0, 0 ],
+    "duration": 0.000,
+    "next": "@furnace_fuel_dx.item_visible_wait"
+  },
+
+  "item_visible_wait": {
+    "anim_type": "wait",
+    "duration": 1,
+    "next": "@furnace_fuel_dx.item_not_visible_1"
+  },
+
+  "item_not_visible_1": {
+    "anim_type": "offset",
+    "from": [ -18, 0 ],
+    "to": [ -18, 0 ],
+    "duration": 0.000,
+    "next": "@furnace_fuel_dx.item_not_visible_wait_1"
+  },
+
+  "item_not_visible_wait_1": {
+    "anim_type": "wait",
+    "duration": "$not_visible_duration_1",
+    "next": "@furnace_fuel_dx.item_not_visible_2"
+  },
+
+  "item_not_visible_2": {
+    "anim_type": "offset",
+    "from": [ -18, 0 ],
+    "to": [ -18, 0 ],
+    "duration": 0.000,
+    "next": "@furnace_fuel_dx.item_not_visible_wait_2"
+  },
+
+  "item_not_visible_wait_2": {
+    "anim_type": "wait",
+    "duration": "$not_visible_duration_2",
+    "next": "@furnace_fuel_dx.item_visible"
+  },
+
+  "cell_image_fuel_overlay": {
+    "type": "panel",
+    "size": [ 16, 16 ],
+    "layer": -2,
+    "controls": [
+      { "fuel_items@furnace_fuel_dx.fuel_items": { } },
+      { "cell_red_slot@java_gui_common.cell_furnace_slot": { "layer": 2 } },
+      { "cell_red_slot_overlay@java_gui_common.cell_red_slot_overlay": { "layer": 4 } }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "$item_view_overlay",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  /*//// Fuel Panel ////*/
+
+  "fuel_overlay_panel": {
+    "type": "panel",
+    "$is_blast_furnace|default": false,
+    "$is_smoker|default": false,
+    "controls": [
+      { "furnace_fuel_overlay@furnace_fuel_dx.furnace_fuel_overlay": { "$tab_mode": "other" } },
+      { "all_furnace_fuel_overlay@furnace_fuel_dx.furnace_fuel_overlay": { "$tab_mode": "all", "ignored": "$is_smoker" } }
+    ]
+  },
+
+  "furnace_fuel_overlay": {
+    "type": "panel",
+    "size": [ 16, 16 ],
+    "controls": [
+      { "item_01@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_1_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_02@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_2_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_03@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_3_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_04@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_4_toggle')", "ignored": "$is_blast_furnace" } },
+      { "item_05@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_5_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_06@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_6_toggle')", "ignored": "$is_blast_furnace" } },
+      { "item_07@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_7_toggle')", "ignored": "$is_smoker" } },
+      { "item_08@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_8_toggle')", "ignored": "$is_smoker" } },
+      { "item_09@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_9_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_10@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_10_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_11@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_11_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_12@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_12_toggle')", "ignored": "$is_blast_furnace" } },
+      { "item_13@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_13_toggle')", "ignored": "$is_smoker" } },
+      { "item_14@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_14_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_15@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_15_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_16@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_16_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_17@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_17_toggle')", "ignored": "$is_blast_furnace" } },
+      { "item_18@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_18_toggle')", "ignored": "$is_blast_furnace" } },
+      { "item_19@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_19_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_20@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_20_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_21@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_21_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_22@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_22_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_23@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_23_toggle')", "ignored": "$is_smoker" } },
+      { "item_24@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_24_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_25@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_25_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_26@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_26_toggle')", "ignored": "$is_smoker" } },
+      { "item_27@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_27_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_28@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_28_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_29@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_29_toggle')", "ignored": "$is_smoker" } },
+      { "item_30@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_30_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_31@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_31_toggle')", "ignored": "$is_smoker" } },
+      { "item_32@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_32_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_33@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_33_toggle')", "ignored": "$is_blast_furnace" } },
+      { "item_34@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_34_toggle')", "ignored": "$is_blast_furnace" } },
+      { "item_35@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_35_toggle')", "ignored": "$is_blast_furnace" } },
+      { "item_36@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_36_toggle')", "ignored": "$is_smoker" } },
+      { "item_37@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_37_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_38@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_38_toggle')", "ignored": "$is_blast_furnace" } },
+      { "item_39@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_39_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_40@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_40_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_41@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_41_toggle')", "ignored": "$is_smoker" } },
+      { "item_42@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_42_toggle')", "ignored": "$is_smoker" } },
+      { "item_43@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_43_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_44@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_44_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_45@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_45_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_46@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_46_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_47@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_47_toggle')", "ignored": "$is_smoker" } },
+      { "item_48@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_48_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_49@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_49_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_50@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_50_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_50@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_51_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_50@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_52_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_50@furnace_fuel_dx.cell_image_fuel_overlay": { "$item_view_overlay": "($tab_mode + '_item_53_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } }
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+	"permissions_screen": {
+		"$screen_content": "common_dx.null_panel",
+		"$screen_bg_content": "permissions_dx.permissions_screen_content"
+	}
+}

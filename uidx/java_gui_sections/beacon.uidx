@@ -1,0 +1,45 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "beacon_java_dx",
+
+  "beacon_base@java_gui_common.crisxolt_image_panel": {
+    "$texture": "assets/minecraft/textures/gui/container/beacon"
+  },
+  
+  /*////// Base //////*/
+  
+  /* Beacon screen */
+
+  "dialog_bg_beacon@beacon_java_dx.beacon_base": {
+    "$uv_size": [ 230, 219 ]
+  },
+
+  /* Buttons */
+
+  "button_unchecked_default@beacon_java_dx.beacon_base": {
+    "$uv": [ 0, -219 ],
+    "$uv_size": [ 22, 22 ]
+  },
+
+  "button_unchecked_hover@beacon_java_dx.button_unchecked_default": {
+    "$uv": [ -66, -219 ]
+  },
+
+  "button_checked@beacon_java_dx.button_unchecked_default": {
+    "$uv": [ -22, -219 ]
+  },
+
+  "button_locked@beacon_java_dx.button_unchecked_default": {
+    "$uv": [ -44, -219 ]
+  },
+
+  "confirm_icon@beacon_java_dx.beacon_base": {
+    "$uv": [ -88, -219 ],
+    "$uv_size": [ 21, 22 ]
+  },
+
+  "cancel_icon@beacon_java_dx.confirm_icon": {
+    "$uv": [ -110, -219 ]
+  }
+}

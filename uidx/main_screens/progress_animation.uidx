@@ -1,0 +1,176 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "progress_anim_dx",
+
+  /*//// World Loading Animation ////*/
+
+  "world_loading_bar": { 
+    "type": "image",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [ 90, 6300 ],
+    "texture": "textures/uidx/world_loading_bar_full",
+    "$duration_per_frame": 0.125,
+    "offset": "@progress_anim_dx.world_flipbook_01"
+  },
+  
+  "flipbook_base": {
+    "anim_type": "offset",
+    "easing": "linear",
+    "duration": "$duration_per_frame",
+    "from": "$anim_offset",
+    "to": "$anim_offset"
+  },
+
+  "world_flipbook_01@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, 0     ], "next": "@progress_anim_dx.world_flipbook_02" },
+  "world_flipbook_02@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -90   ], "next": "@progress_anim_dx.world_flipbook_03" },
+  "world_flipbook_03@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -180  ], "next": "@progress_anim_dx.world_flipbook_04" },
+  "world_flipbook_04@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -270  ], "next": "@progress_anim_dx.world_flipbook_05" },
+  "world_flipbook_05@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -360  ], "next": "@progress_anim_dx.world_flipbook_06" },
+  "world_flipbook_06@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -450  ], "next": "@progress_anim_dx.world_flipbook_07" },
+  "world_flipbook_07@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -540  ], "next": "@progress_anim_dx.world_flipbook_08" },
+  "world_flipbook_08@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -630  ], "next": "@progress_anim_dx.world_flipbook_09" },
+  "world_flipbook_09@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -720  ], "next": "@progress_anim_dx.world_flipbook_10" },
+  "world_flipbook_10@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -810  ], "next": "@progress_anim_dx.world_flipbook_11" },
+  "world_flipbook_11@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -900  ], "next": "@progress_anim_dx.world_flipbook_12" },
+  "world_flipbook_12@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -990  ], "next": "@progress_anim_dx.world_flipbook_13" },
+  "world_flipbook_13@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -1080 ], "next": "@progress_anim_dx.world_flipbook_14" },
+  "world_flipbook_14@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -1170 ], "next": "@progress_anim_dx.world_flipbook_15" },
+  "world_flipbook_15@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -1260 ], "next": "@progress_anim_dx.world_flipbook_16" },
+  "world_flipbook_16@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -1350 ], "next": "@progress_anim_dx.world_flipbook_17" },
+  "world_flipbook_17@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -1440 ], "next": "@progress_anim_dx.world_flipbook_18" },
+  "world_flipbook_18@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -1530 ], "next": "@progress_anim_dx.world_flipbook_19" },
+  "world_flipbook_19@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -1620 ], "next": "@progress_anim_dx.world_flipbook_20" },
+  "world_flipbook_20@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -1710 ], "next": "@progress_anim_dx.world_flipbook_21" },
+  "world_flipbook_21@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -1800 ], "next": "@progress_anim_dx.world_flipbook_22" },
+  "world_flipbook_22@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -1890 ], "next": "@progress_anim_dx.world_flipbook_23" },
+  "world_flipbook_23@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -1980 ], "next": "@progress_anim_dx.world_flipbook_24" },
+  "world_flipbook_24@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -2070 ], "next": "@progress_anim_dx.world_flipbook_25" },
+  "world_flipbook_25@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -2160 ], "next": "@progress_anim_dx.world_flipbook_26" },
+  "world_flipbook_26@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -2250 ], "next": "@progress_anim_dx.world_flipbook_27" },
+  "world_flipbook_27@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -2340 ], "next": "@progress_anim_dx.world_flipbook_28" },
+  "world_flipbook_28@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -2430 ], "next": "@progress_anim_dx.world_flipbook_29" },
+  "world_flipbook_29@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -2520 ], "next": "@progress_anim_dx.world_flipbook_30" },
+  "world_flipbook_30@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -2610 ], "next": "@progress_anim_dx.world_flipbook_31" },
+  "world_flipbook_31@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -2700 ], "next": "@progress_anim_dx.world_flipbook_32" },
+  "world_flipbook_32@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -2790 ], "next": "@progress_anim_dx.world_flipbook_33" },
+  "world_flipbook_33@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -2880 ], "next": "@progress_anim_dx.world_flipbook_34" },
+  "world_flipbook_34@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -2970 ], "next": "@progress_anim_dx.world_flipbook_35" },
+  "world_flipbook_35@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -3060 ], "next": "@progress_anim_dx.world_flipbook_36" },
+  "world_flipbook_36@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -3150 ], "next": "@progress_anim_dx.world_flipbook_37" },
+  "world_flipbook_37@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -3240 ], "next": "@progress_anim_dx.world_flipbook_38" },
+  "world_flipbook_38@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -3330 ], "next": "@progress_anim_dx.world_flipbook_39" },
+  "world_flipbook_39@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -3420 ], "next": "@progress_anim_dx.world_flipbook_40" },
+  "world_flipbook_40@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -3510 ], "next": "@progress_anim_dx.world_flipbook_41" },
+  "world_flipbook_41@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -3600 ], "next": "@progress_anim_dx.world_flipbook_42" }, 
+  "world_flipbook_42@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -3690 ], "next": "@progress_anim_dx.world_flipbook_43" },
+  "world_flipbook_43@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -3780 ], "next": "@progress_anim_dx.world_flipbook_44" },
+  "world_flipbook_44@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -3870 ], "next": "@progress_anim_dx.world_flipbook_45" },
+  "world_flipbook_45@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -3960 ], "next": "@progress_anim_dx.world_flipbook_46" },
+  "world_flipbook_46@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -4050 ], "next": "@progress_anim_dx.world_flipbook_47" },
+  "world_flipbook_47@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -4140 ], "next": "@progress_anim_dx.world_flipbook_48" },
+  "world_flipbook_48@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -4230 ], "next": "@progress_anim_dx.world_flipbook_49" },
+  "world_flipbook_49@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -4320 ], "next": "@progress_anim_dx.world_flipbook_50" },
+  "world_flipbook_50@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -4410 ], "next": "@progress_anim_dx.world_flipbook_51" },
+  "world_flipbook_51@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -4500 ], "next": "@progress_anim_dx.world_flipbook_52" }, 
+  "world_flipbook_52@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -4590 ], "next": "@progress_anim_dx.world_flipbook_53" },
+  "world_flipbook_53@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -4680 ], "next": "@progress_anim_dx.world_flipbook_54" },
+  "world_flipbook_54@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -4770 ], "next": "@progress_anim_dx.world_flipbook_55" },
+  "world_flipbook_55@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -4860 ], "next": "@progress_anim_dx.world_flipbook_56" },
+  "world_flipbook_56@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -4950 ], "next": "@progress_anim_dx.world_flipbook_57" },
+  "world_flipbook_57@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -5040 ], "next": "@progress_anim_dx.world_flipbook_58" },
+  "world_flipbook_58@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -5130 ], "next": "@progress_anim_dx.world_flipbook_59" },
+  "world_flipbook_59@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -5220 ], "next": "@progress_anim_dx.world_flipbook_60" },
+  "world_flipbook_60@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -5310 ], "next": "@progress_anim_dx.world_flipbook_61" },
+  "world_flipbook_61@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -5400 ], "next": "@progress_anim_dx.world_flipbook_62" }, 
+  "world_flipbook_62@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -5490 ], "next": "@progress_anim_dx.world_flipbook_63" },
+  "world_flipbook_63@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -5580 ], "next": "@progress_anim_dx.world_flipbook_64" },
+  "world_flipbook_64@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -5670 ], "next": "@progress_anim_dx.world_flipbook_65" },
+  "world_flipbook_65@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -5760 ], "next": "@progress_anim_dx.world_flipbook_66" },
+  "world_flipbook_66@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -5850 ], "next": "@progress_anim_dx.world_flipbook_67" },
+  "world_flipbook_67@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -5940 ], "next": "@progress_anim_dx.world_flipbook_68" },
+  "world_flipbook_68@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -6030 ], "next": "@progress_anim_dx.world_flipbook_69" },
+  "world_flipbook_69@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -6120 ], "next": "@progress_anim_dx.world_flipbook_70" },
+  "world_flipbook_70@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -6210 ], "next": "@progress_anim_dx.world_flipbook_70" },  
+
+  /*//// Server/Realms Loading  Animation ////*/
+
+  "server_loading_bar": {
+    "type": "stack_panel",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [ 140, "100%c" ],
+    "$duration_per_frame": 0.06,
+    "offset": "@progress_anim_dx.server_flipbook_01",
+    "controls": [
+      { "01@progress_anim_dx.server_loading_label": { "$left_text": "_ _ _ _ _ ", "$loading_text": "▃ ▄ ▅ ▆ ▇ █" } },
+      { "02@progress_anim_dx.server_loading_label": { "$left_text": "_ _ _ _ ", "$loading_text": "▃ ▄ ▅ ▆ ▇ █ ▇" } },
+      { "03@progress_anim_dx.server_loading_label": { "$left_text": "_ _ _ ", "$loading_text": "▃ ▄ ▅ ▆ ▇ █ ▇ ▆" } },
+      { "04@progress_anim_dx.server_loading_label": { "$left_text": "_ _ ", "$loading_text": "▃ ▄ ▅ ▆ ▇ █ ▇ ▆ ▅" } },
+      { "05@progress_anim_dx.server_loading_label": { "$left_text": "_ ", "$loading_text": "▃ ▄ ▅ ▆ ▇ █ ▇ ▆ ▅ ▄" } },
+      { "06@progress_anim_dx.server_loading_label": { "$loading_text": "▃ ▄ ▅ ▆ ▇ █ ▇ ▆ ▅ ▄ ▃" } },
+      { "07@progress_anim_dx.server_loading_label": { "$right_text": " _", "$loading_text": "▄ ▅ ▆ ▇ █ ▇ ▆ ▅ ▄ ▃" } },
+      { "08@progress_anim_dx.server_loading_label": { "$right_text": " _ _", "$loading_text": "▅ ▆ ▇ █ ▇ ▆ ▅ ▄ ▃" } },
+      { "09@progress_anim_dx.server_loading_label": { "$right_text": " _ _ _", "$loading_text": "▆ ▇ █ ▇ ▆ ▅ ▄ ▃" } },
+      { "10@progress_anim_dx.server_loading_label": { "$right_text": " _ _ _ _", "$loading_text": "▇ █ ▇ ▆ ▅ ▄ ▃" } },
+      { "11@progress_anim_dx.server_loading_label": { "$right_text": " _ _ _ _ _", "$loading_text": "█ ▇ ▆ ▅ ▄ ▃" } }
+    ]
+  },
+
+  "loading_label": {
+    "type": "label",
+    "shadow": true,
+    "text": "$loading_text",
+    "size": [ "default", 10 ],
+    "color": [ 0.5, 0.5, 0.5 ],
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "text_alignment": "center"
+  },
+
+  "server_loading_label": {
+    "type": "panel",
+    "size": [ 140, 10 ],
+    "controls": [
+      {
+        "stack_panel_control": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": [ "100%c", 10 ],
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "$left_text|default": "",
+          "$right_text|default": "",
+          "$loading_text|default": "",
+          "controls": [
+            { "left_label@progress_anim_dx.loading_label": { "text": "$left_text" } },
+            { "middle_label@progress_anim_dx.loading_label": { "text": "$loading_text" } },
+            { "right_label@progress_anim_dx.loading_label": { "text": "$right_text" } }
+          ]
+        }
+      }
+    ]
+  },
+  
+  "server_flipbook_01@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, 0    ], "next": "@progress_anim_dx.server_flipbook_02" },
+  "server_flipbook_02@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -10  ], "next": "@progress_anim_dx.server_flipbook_03" },
+  "server_flipbook_03@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -20  ], "next": "@progress_anim_dx.server_flipbook_04" },
+  "server_flipbook_04@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -30  ], "next": "@progress_anim_dx.server_flipbook_05" },
+  "server_flipbook_05@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -40  ], "next": "@progress_anim_dx.server_flipbook_06" },
+  "server_flipbook_06@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -50  ], "next": "@progress_anim_dx.server_flipbook_07" },
+  "server_flipbook_07@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -60  ], "next": "@progress_anim_dx.server_flipbook_08" },
+  "server_flipbook_08@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -70  ], "next": "@progress_anim_dx.server_flipbook_09" },
+  "server_flipbook_09@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -80  ], "next": "@progress_anim_dx.server_flipbook_10" },
+  "server_flipbook_10@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -90  ], "next": "@progress_anim_dx.server_flipbook_11" },
+  "server_flipbook_11@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -100 ], "next": "@progress_anim_dx.server_flipbook_12" },
+  "server_flipbook_12@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -90  ], "next": "@progress_anim_dx.server_flipbook_13" },
+  "server_flipbook_13@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -80  ], "next": "@progress_anim_dx.server_flipbook_14" },
+  "server_flipbook_14@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -70  ], "next": "@progress_anim_dx.server_flipbook_15" },
+  "server_flipbook_15@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -60  ], "next": "@progress_anim_dx.server_flipbook_16" },
+  "server_flipbook_16@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -50  ], "next": "@progress_anim_dx.server_flipbook_17" },
+  "server_flipbook_17@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -40  ], "next": "@progress_anim_dx.server_flipbook_18" },
+  "server_flipbook_18@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -30  ], "next": "@progress_anim_dx.server_flipbook_19" },
+  "server_flipbook_19@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -20  ], "next": "@progress_anim_dx.server_flipbook_20" },
+  "server_flipbook_20@progress_anim_dx.flipbook_base": { "$anim_offset": [ 0, -10  ], "next": "@progress_anim_dx.server_flipbook_01" }
+}

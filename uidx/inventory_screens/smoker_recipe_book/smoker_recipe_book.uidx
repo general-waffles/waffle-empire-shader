@@ -1,0 +1,175 @@
+/*File made by @CrisXolt. //(c) Don't use any code design without permission!*/
+{
+  "namespace": "smoker_recipe_book_dx",
+
+  /*//// Furnace recipe book ////*/
+
+  /*//// Tabs ////*/
+
+  "food_icon@recipe_book_dx.item_renderer": {
+    "property_bag": {
+      "#item_id_aux": 20905984
+    }
+  },
+
+  "tab_icon_navigation_panel@recipe_book_dx.tab_front_navigation_panel": {
+    "layer": -2,
+    "controls": [
+      { "search_tab@recipe_book_dx.tab_icon": { "$tab_icon": "recipe_book_dx.search_icon" } },
+      { "fill_panel_0": { "type": "panel", "size": [ "100%", 1 ] } },
+      { "food_tab@recipe_book_dx.tab_icon": { "$tab_icon": "smoker_recipe_book_dx.food_icon" } }
+    ]
+  },
+
+  "left_tab@recipe_book_dx.left_tab": {
+    "$toggle_focus_enabled": false,
+    "$radio_toggle_group": true,
+    "$toggle_group_default_selected": 0,
+    "$toggle_binding_type": "global"
+  },
+
+  "all_tab@smoker_recipe_book_dx.left_tab": {
+    "$tab_view_binding_name": "all_tab_toggle",
+    "$toggle_default_state": true,
+    "$toggle_group_forced_index": 0
+  },
+
+  "food_tab@smoker_recipe_book_dx.left_tab": {
+    "$tab_view_binding_name": "food_tab_toggle",
+    "$toggle_group_forced_index": 1
+  },
+
+  "tab_front_navigation_panel": {
+    "type": "stack_panel",
+    "orientation": "vertical",
+    "size": [ 35, 107 ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset": [ -32, 3 ],
+    "controls": [
+      {
+        "navigation_tabs": {
+          "type": "panel",
+          "size": [ "fill", "100%" ],
+          "controls": [
+            {
+              "content": {
+                "type": "stack_panel",
+                "orientation": "vertical",
+                "size": [ "100%", "100%" ],
+                "anchor_to": "top_left",
+                "anchor_from": "top_left",
+                "controls": [
+                  { "all_tab@smoker_recipe_book_dx.all_tab": {} },
+                  {
+                    "fill_panel_0": {
+                      "type": "panel",
+                      "size": [ "fill", 1 ]
+                    }
+                  },
+                  { "food_tab@smoker_recipe_book_dx.food_tab": {} }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  /*//// Tabs Back ////*/
+
+  "tab_back_navigation_panel@recipe_book_dx.tab_front_navigation_panel": {
+    "layer": -2,
+    "controls": [
+      { "search_tab@furnace_recipe_book_dx.tab_back": { "$tab_back_binding_name": "all_tab_toggle" } },
+      { "fill_panel_0": { "type": "panel", "size": [ "100%", 1 ] } },
+      { "construction_tab@furnace_recipe_book_dx.tab_back": { "$tab_back_binding_name": "food_tab_toggle" } }
+    ]
+  },
+
+  "furnace_tab_label@crafting.creative_label": {
+    "size": [ 162, 10 ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "text_alignment": "left",
+    "offset": [ 25, 13 ],
+    "color": [ 1.0, 1.0, 1.0 ],
+    "shadow": true,
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "$tab_binding_name",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+  
+  /*//// Tab content ////*/
+
+  "tab_content_pages": {
+    "type": "panel",
+    "$panel_clips": false,
+    "controls": [
+      {
+        "item_0@cris_furnace_rb_items.item_0": {
+          "anchor_to": "top_right",
+          "anchor_from": "top_right",
+          "offset": [ -11, 12 ]
+        }
+      },
+      {
+        "all_label@smoker_recipe_book_dx.furnace_tab_label": {
+          "text": "craftingScreen.tab.search",
+          "$tab_binding_name": "all_tab_toggle"
+        }
+      },
+      {
+        "food_label@smoker_recipe_book_dx.furnace_tab_label": {
+          "text": "itemGroup.name.cookedFood",
+          "$tab_binding_name": "food_tab_toggle"
+        }
+      },
+      {
+        "food_tab_pages@crisxolt_pages_furnace.furnace_recipe_book_tab_pages": {
+          "$tab_page": "food",
+          "$number_right": "1",
+          "$panel_content": "furnace_pages_dx.food_page_1",
+          "$ignore_number_label": true,
+          "$is_food_pages": true,
+          "$tab_mode": "other"
+        }
+      }
+    ]
+  },
+
+  /*//// Panel ////*/
+  
+  "recipe_book_panel@common.root_panel": {
+    "type": "input_panel",
+    "size": [ 147, 166 ],
+    "controls": [
+      { "dialog_bg_recipe_book@recipe_book_java_dx.dialog_bg_recipe_book": { "layer": 1 } },
+      { "tab_gamepad_helper_panel@recipe_book_dx.tab_gamepad_helper_panel": { "size": [ 32, 53 ] } },
+      { "tab_icon_navigation_panel@smoker_recipe_book_dx.tab_icon_navigation_panel": { "layer": 2 } },
+      { "tab_back_navigation_panel@smoker_recipe_book_dx.tab_back_navigation_panel": { "layer": -2 } },
+      { "tab_front_navigation_panel@smoker_recipe_book_dx.tab_front_navigation_panel": { "layer": 1 } },
+      { "tab_content_pages@smoker_recipe_book_dx.tab_content_pages": { "layer": 5 } }
+    ],
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_tab_left",
+        "to_button_id": "button.menu_tab_left",
+        "mapping_type": "global",
+        "scope": "view"
+      },
+      {
+        "from_button_id": "button.menu_tab_right",
+        "to_button_id": "button.menu_tab_right",
+        "mapping_type": "global",
+        "scope": "view"
+      }
+    ]
+  }
+}

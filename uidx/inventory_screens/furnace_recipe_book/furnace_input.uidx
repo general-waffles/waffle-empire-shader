@@ -1,0 +1,96 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "furnace_input_dx",
+
+  "cell_image_input_overlay": {
+    "type": "panel",
+    "size": [ 16, 16 ],
+    "layer": -2,
+    "controls": [
+      { "fuel_items@furnace_dx.item_renderer_overlay": { "layer": 3 } },
+      { "cell_red_slot@java_gui_common.cell_furnace_slot": { "layer": 2 } },
+      { "cell_red_slot_overlay@java_gui_common.cell_red_slot_overlay": { "layer": 4 } }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "$item_view_overlay",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  /*//// Input Panel ////*/
+
+  "input_overlay_panel": {
+    "type": "panel",
+    "$is_blast_furnace|default": false,
+    "$is_smoker|default": false,
+    "controls": [
+      { "furnace_items_overlay@furnace_input_dx.furnace_items_overlay": { "$tab_mode": "other" } },
+      { "all_furnace_items_overlay@furnace_input_dx.furnace_items_overlay": { "$tab_mode": "all", "ignored": "$is_smoker" } }
+    ]
+  },
+
+  "furnace_items_overlay": {
+    "type": "panel",
+    "size": [ 16, 16 ],
+    "controls": [
+      { "item_01@furnace_input_dx.cell_image_input_overlay": { "$item_value": 10420229, "$item_view_overlay": "($tab_mode + '_item_1_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_02@furnace_input_dx.cell_image_input_overlay": { "$item_value": 10420237, "$item_view_overlay": "($tab_mode + '_item_2_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_03@furnace_input_dx.cell_image_input_overlay": { "$item_value": 262144, "$item_view_overlay": "($tab_mode + '_item_3_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_04@furnace_input_dx.cell_image_input_overlay": { "$item_value": 22872064, "$item_view_overlay": "($tab_mode + '_item_4_toggle')", "ignored": "$is_blast_furnace" } },
+      { "item_05@furnace_input_dx.cell_image_input_overlay": { "$item_value": 10420233, "$item_view_overlay": "($tab_mode + '_item_5_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_06@furnace_input_dx.cell_image_input_overlay": { "$item_value": 27721728, "$item_view_overlay": "($tab_mode + '_item_6_toggle')", "ignored": "$is_blast_furnace" } },
+      { "item_07@furnace_input_dx.cell_image_input_overlay": { "$item_value": 983040, "$item_view_overlay": "($tab_mode + '_item_7_toggle')", "ignored": "$is_smoker" } },
+      { "item_08@furnace_input_dx.cell_image_input_overlay": { "$item_value": 3670016, "$item_view_overlay": "($tab_mode + '_item_8_toggle')", "ignored": "$is_smoker" } },
+      { "item_09@furnace_input_dx.cell_image_input_overlay": { "$item_value": 5308416, "$item_view_overlay": "($tab_mode + '_item_9_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_10@furnace_input_dx.cell_image_input_overlay": { "$item_value": 10420226, "$item_view_overlay": "($tab_mode + '_item_10_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_11@furnace_input_dx.cell_image_input_overlay": { "$item_value": -10223616, "$item_view_overlay": "($tab_mode + '_item_11_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_12@furnace_input_dx.cell_image_input_overlay": { "$item_value": 20905984, "$item_view_overlay": "($tab_mode + '_item_12_toggle')", "ignored": "$is_blast_furnace" } },
+      { "item_13@furnace_input_dx.cell_image_input_overlay": { "$item_value": 1048576, "$item_view_overlay": "($tab_mode + '_item_13_toggle')", "ignored": "$is_smoker" } },
+      { "item_14@furnace_input_dx.cell_image_input_overlay": { "$item_value": 22085632, "$item_view_overlay": "($tab_mode + '_item_14_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_15@furnace_input_dx.cell_image_input_overlay": { "$item_value": 10420238, "$item_view_overlay": "($tab_mode + '_item_15_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_16@furnace_input_dx.cell_image_input_overlay": { "$item_value": 28311552, "$item_view_overlay": "($tab_mode + '_item_16_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_17@furnace_input_dx.cell_image_input_overlay": { "$item_value": 25690112, "$item_view_overlay": "($tab_mode + '_item_17_toggle')", "ignored": "$is_blast_furnace" } },
+      { "item_18@furnace_input_dx.cell_image_input_overlay": { "$item_value": 30146560, "$item_view_overlay": "($tab_mode + '_item_18_toggle')", "ignored": "$is_blast_furnace" } },
+      { "item_19@furnace_input_dx.cell_image_input_overlay": { "$item_value": 10420227, "$item_view_overlay": "($tab_mode + '_item_19_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_20@furnace_input_dx.cell_image_input_overlay": { "$item_value": 65536, "$item_view_overlay": "($tab_mode + '_item_20_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_21@furnace_input_dx.cell_image_input_overlay": { "$item_value": 1114112, "$item_view_overlay": "($tab_mode + '_item_21_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_22@furnace_input_dx.cell_image_input_overlay": { "$item_value": 7340032, "$item_view_overlay": "($tab_mode + '_item_22_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_23@furnace_input_dx.cell_image_input_overlay": { "$item_value": 17498112, "$item_view_overlay": "($tab_mode + '_item_23_toggle')", "ignored": "$is_smoker" } },
+      { "item_24@furnace_input_dx.cell_image_input_overlay": { "$item_value": 10420232, "$item_view_overlay": "($tab_mode + '_item_24_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_25@furnace_input_dx.cell_image_input_overlay": { "$item_value": 10158080, "$item_view_overlay": "($tab_mode + '_item_25_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_26@furnace_input_dx.cell_image_input_overlay": { "$item_value": 4784128, "$item_view_overlay": "($tab_mode + '_item_26_toggle')", "ignored": "$is_smoker" } },
+      { "item_27@furnace_input_dx.cell_image_input_overlay": { "$item_value": 786432, "$item_view_overlay": "($tab_mode + '_item_27_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_28@furnace_input_dx.cell_image_input_overlay": { "$item_value": 10420239, "$item_view_overlay": "($tab_mode + '_item_28_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_29@furnace_input_dx.cell_image_input_overlay": { "$item_value": 1376256, "$item_view_overlay": "($tab_mode + '_item_29_toggle')", "ignored": "$is_smoker" } },
+      { "item_30@furnace_input_dx.cell_image_input_overlay": { "$item_value": 11730944, "$item_view_overlay": "($tab_mode + '_item_30_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_31@furnace_input_dx.cell_image_input_overlay": { "$item_value": -17760256, "$item_view_overlay": "($tab_mode + '_item_31_toggle')", "ignored": "$is_smoker" } },
+      { "item_32@furnace_input_dx.cell_image_input_overlay": { "$item_value": 5373952, "$item_view_overlay": "($tab_mode + '_item_32_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_33@furnace_input_dx.cell_image_input_overlay": { "$item_value": 26935296, "$item_view_overlay": "($tab_mode + '_item_33_toggle')", "ignored": "$is_blast_furnace" } },
+      { "item_34@furnace_input_dx.cell_image_input_overlay": { "$item_value": 23789568, "$item_view_overlay": "($tab_mode + '_item_34_toggle')", "ignored": "$is_blast_furnace" } },
+      { "item_35@furnace_input_dx.cell_image_input_overlay": { "$item_value": 23920640, "$item_view_overlay": "($tab_mode + '_item_35_toggle')", "ignored": "$is_blast_furnace" } },
+      { "item_36@furnace_input_dx.cell_image_input_overlay": { "$item_value": 10027008, "$item_view_overlay": "($tab_mode + '_item_36_toggle')", "ignored": "$is_smoker" } },
+      { "item_37@furnace_input_dx.cell_image_input_overlay": { "$item_value": 10420224, "$item_view_overlay": "($tab_mode + '_item_37_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_38@furnace_input_dx.cell_image_input_overlay": { "$item_value": 21954560, "$item_view_overlay": "($tab_mode + '_item_38_toggle')", "ignored": "$is_blast_furnace" } },
+      { "item_39@furnace_input_dx.cell_image_input_overlay": { "$item_value": 1572864, "$item_view_overlay": "($tab_mode + '_item_39_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_40@furnace_input_dx.cell_image_input_overlay": { "$item_value": 10420235, "$item_view_overlay": "($tab_mode + '_item_40_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_41@furnace_input_dx.cell_image_input_overlay": { "$item_value": 917504, "$item_view_overlay": "($tab_mode + '_item_41_toggle')", "ignored": "$is_smoker" } },
+      { "item_42@furnace_input_dx.cell_image_input_overlay": { "$item_value": 8454144, "$item_view_overlay": "($tab_mode + '_item_42_toggle')", "ignored": "$is_smoker" } },
+      { "item_43@furnace_input_dx.cell_image_input_overlay": { "$item_value": 1245185, "$item_view_overlay": "($tab_mode + '_item_43_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_44@furnace_input_dx.cell_image_input_overlay": { "$item_value": 10420236, "$item_view_overlay": "($tab_mode + '_item_44_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_45@furnace_input_dx.cell_image_input_overlay": { "$item_value": 10420234, "$item_view_overlay": "($tab_mode + '_item_45_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_46@furnace_input_dx.cell_image_input_overlay": { "$item_value": 10420231, "$item_view_overlay": "($tab_mode + '_item_46_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_47@furnace_input_dx.cell_image_input_overlay": { "$item_value": 18546688, "$item_view_overlay": "($tab_mode + '_item_47_toggle')", "ignored": "$is_smoker" } },
+      { "item_48@furnace_input_dx.cell_image_input_overlay": { "$item_value": 10420225, "$item_view_overlay": "($tab_mode + '_item_48_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_49@furnace_input_dx.cell_image_input_overlay": { "$item_value": -17956864, "$item_view_overlay": "($tab_mode + '_item_49_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_50@furnace_input_dx.cell_image_input_overlay": { "$item_value": 6422528, "$item_view_overlay": "($tab_mode + '_item_50_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_51@furnace_input_dx.cell_image_input_overlay": { "$item_value": 10420230, "$item_view_overlay": "($tab_mode + '_item_51_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_52@furnace_input_dx.cell_image_input_overlay": { "$item_value": 5701632, "$item_view_overlay": "($tab_mode + '_item_52_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } },
+      { "item_53@furnace_input_dx.cell_image_input_overlay": { "$item_value": 10420228, "$item_view_overlay": "($tab_mode + '_item_53_toggle')", "ignored": "($is_blast_furnace or $is_smoker)" } }
+    ]
+  }
+}

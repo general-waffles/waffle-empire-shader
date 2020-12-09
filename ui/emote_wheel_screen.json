@@ -1,0 +1,10 @@
+{
+  "emote_wheel_screen": {
+    "$use_loading_bars": false,
+    "$screen_animations": [ ],
+    "$background_animations": [ ],
+    "$default_text_color": [ 0.7, 0.7, 0.7 ],
+    "$screen_content": "emote_wheel_dx.center_screen",
+    "$screen_bg_content": "emote_wheel_dx.full_screen"
+  }
+}

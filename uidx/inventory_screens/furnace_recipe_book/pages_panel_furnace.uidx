@@ -1,0 +1,59 @@
+/*File made by @CrisXolt. //(c) Don't use any code design without permission!*/
+{
+  "namespace": "crisxolt_pages_furnace",
+
+  /*//// Panels base ////*/
+  
+  "furnace_recipe_book_tab_pages": {
+    "type": "panel",
+    "controls": [
+      {
+        "furnace_page_1@crisxolt_tab_pages.page_1": {
+          "$ignore_next_button": "($is_food_pages or $is_materials_pages)"
+        }
+      },
+      {
+        "page_2": {
+          "type": "panel",
+          "ignored": "($is_food_pages or $is_materials_pages)",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "($tab_page + '_page_2_button_toggle')",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ],
+          "controls": [
+            {
+              "furnace_page_2@crisxolt_tab_pages.custom_page_2": {
+                "$ignore_next_button": "$is_stone_pages"
+              }
+            },
+            {
+              "page_3": {
+                "type": "panel",
+                "ignored": "$is_stone_pages",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "($tab_page + '_page_3_button_toggle')",
+                    "source_property_name": "#toggle_state",
+                    "target_property_name": "#visible"
+                  }
+                ],
+                "controls": [
+                  {
+                    "furnace_page_3@crisxolt_tab_pages.custom_page_3": {
+                      "$ignore_next_button": true
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

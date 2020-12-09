@@ -1,0 +1,235 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "advancements_java_dx",
+  
+  /*//// Tab Inventory ////*/
+
+  "dialog_bg_advancements": {
+    "type": "image",
+    "texture": "assets/minecraft/textures/gui/advancements/window",
+    "size": [ 252, 140 ],
+    "$window_uv|default": [ 0, 0 ],
+    "$window_uv_size|default": [ 0, 0 ],
+    "uv": "$window_uv",
+    "uv_size": "$window_uv_size",
+    "variables": [
+      { "requires": "($advancements_window_resolution = 256x)",  "$window_uv_size": [ 252, 140 ] },
+      { "requires": "($advancements_window_resolution = 512x)",  "$window_uv_size": [ 504, 280 ] },
+      { "requires": "($advancements_window_resolution = 1024x)", "$window_uv_size": [ 1008, 560 ] },
+      { "requires": "($advancements_window_resolution = 2048x)", "$window_uv_size": [ 2016, 1120 ] },
+      { "requires": "($advancements_window_resolution = 4096x)", "$window_uv_size": [ 4032, 2240 ] },
+      { "requires": "($advancements_window_resolution = 8192x)", "$window_uv_size": [ 8064, 4480 ] }
+    ]
+  }, 
+  
+  /*//// Widgets ////*/
+
+  "completed_title": {
+    "type": "image",
+    "texture": "assets/minecraft/textures/gui/advancements/widgets",
+    "size": [ 200, 26 ],
+    "$widgets_uv|default": [ 0, 0 ],
+    "$widgets_uv_size|default": [ 0, 0 ],
+    "uv": "$widgets_uv",
+    "uv_size": "$widgets_uv_size",
+    "variables": [
+      { "requires": "($advancements_widgets_resolution = 256x)", "$widgets_uv_size": [ 200, 26 ] },
+      { "requires": "($advancements_widgets_resolution = 512x)", "$widgets_uv_size": [ 400, 52 ] },
+      { "requires": "($advancements_widgets_resolution = 1024x)", "$widgets_uv_size": [ 800, 104 ] },
+      { "requires": "($advancements_widgets_resolution = 2048x)", "$widgets_uv_size": [ 1600, 208 ] },
+      { "requires": "($advancements_widgets_resolution = 4096x)", "$widgets_uv_size": [ 3200, 416 ] },
+      { "requires": "($advancements_widgets_resolution = 8192x)", "$widgets_uv_size": [ 6400, 832 ] }
+    ]
+  }, 
+
+  "uncompleted_title@advancements_java_dx.completed_title": {
+    "variables": [
+      { "requires": "($advancements_widgets_resolution = 256x)", "$widgets_uv": [ 0, 26 ], "$widgets_uv_size": [ 200, 26 ] },
+      { "requires": "($advancements_widgets_resolution = 512x)", "$widgets_uv": [ 0, 52 ], "$widgets_uv_size": [ 400, 52 ] },
+      { "requires": "($advancements_widgets_resolution = 1024x)", "$widgets_uv": [ 0, 104 ], "$widgets_uv_size": [ 800, 104 ] },
+      { "requires": "($advancements_widgets_resolution = 2048x)", "$widgets_uv": [ 0, 208 ], "$widgets_uv_size": [ 1600, 208 ] },
+      { "requires": "($advancements_widgets_resolution = 4096x)", "$widgets_uv": [ 0, 416 ], "$widgets_uv_size": [ 3200, 416 ] },
+      { "requires": "($advancements_widgets_resolution = 8192x)", "$widgets_uv": [ 0, 832 ], "$widgets_uv_size": [ 6400, 832 ] }
+    ]
+  }, 
+
+  "description@advancements_java_dx.completed_title": {
+    "variables": [
+      { "requires": "($advancements_widgets_resolution = 256x)", "$widgets_uv": [ 0, 52 ], "$widgets_uv_size": [ 200, 26 ] },
+      { "requires": "($advancements_widgets_resolution = 512x)", "$widgets_uv": [ 0, 104 ], "$widgets_uv_size": [ 400, 52 ] },
+      { "requires": "($advancements_widgets_resolution = 1024x)", "$widgets_uv": [ 0, 208 ], "$widgets_uv_size": [ 800, 104 ] },
+      { "requires": "($advancements_widgets_resolution = 2048x)", "$widgets_uv": [ 0, 416 ], "$widgets_uv_size": [ 1600, 208 ] },
+      { "requires": "($advancements_widgets_resolution = 4096x)", "$widgets_uv": [ 0, 832 ], "$widgets_uv_size": [ 3200, 416 ] },
+      { "requires": "($advancements_widgets_resolution = 8192x)", "$widgets_uv": [ 0, 1664 ], "$widgets_uv_size": [ 6400, 832 ] }
+    ]
+  }, 
+
+  "completed_icon@advancements_java_dx.completed_title": {
+    "size": [ 26, 26 ],
+    "variables": [
+      { "requires": "($advancements_widgets_resolution = 256x)",  "$widgets_uv": [ 0, 128 ], "$widgets_uv_size": [ 26, 26 ] },
+      { "requires": "($advancements_widgets_resolution = 512x)",  "$widgets_uv": [ 0, 256 ], "$widgets_uv_size": [ 52, 52 ] },
+      { "requires": "($advancements_widgets_resolution = 1024x)", "$widgets_uv": [ 0, 512 ], "$widgets_uv_size": [ 104, 104 ] },
+      { "requires": "($advancements_widgets_resolution = 2048x)", "$widgets_uv": [ 0, 1024 ], "$widgets_uv_size": [ 208, 208 ] },
+      { "requires": "($advancements_widgets_resolution = 4096x)", "$widgets_uv": [ 0, 2048 ], "$widgets_uv_size": [ 416, 416 ] },
+      { "requires": "($advancements_widgets_resolution = 8192x)", "$widgets_uv": [ 0, 4096 ], "$widgets_uv_size": [ 832, 832 ] }
+    ]
+  }, 
+
+  "uncompleted_icon@advancements_java_dx.completed_icon": {
+    "variables": [
+      { "requires": "($advancements_widgets_resolution = 256x)",  "$widgets_uv": [ 0, 154 ], "$widgets_uv_size": [ 26, 26 ] },
+      { "requires": "($advancements_widgets_resolution = 512x)",  "$widgets_uv": [ 0, 308 ], "$widgets_uv_size": [ 52, 52 ] },
+      { "requires": "($advancements_widgets_resolution = 1024x)", "$widgets_uv": [ 0, 616 ], "$widgets_uv_size": [ 104, 104 ] },
+      { "requires": "($advancements_widgets_resolution = 2048x)", "$widgets_uv": [ 0, 1232 ], "$widgets_uv_size": [ 208, 208 ] },
+      { "requires": "($advancements_widgets_resolution = 4096x)", "$widgets_uv": [ 0, 2464 ], "$widgets_uv_size": [ 416, 416 ] },
+      { "requires": "($advancements_widgets_resolution = 8192x)", "$widgets_uv": [ 0, 4928 ], "$widgets_uv_size": [ 832, 832 ] }
+    ]
+  }, 
+
+  "completed_special_icon@advancements_java_dx.completed_icon": {
+    "variables": [
+      { "requires": "($advancements_widgets_resolution = 256x)",  "$widgets_uv": [ 26, 128 ], "$widgets_uv_size": [ 26, 26 ] },
+      { "requires": "($advancements_widgets_resolution = 512x)",  "$widgets_uv": [ 52, 256 ], "$widgets_uv_size": [ 52, 52 ] },
+      { "requires": "($advancements_widgets_resolution = 1024x)", "$widgets_uv": [ 104, 512 ], "$widgets_uv_size": [ 104, 104 ] },
+      { "requires": "($advancements_widgets_resolution = 2048x)", "$widgets_uv": [ 208, 1024 ], "$widgets_uv_size": [ 208, 208 ] },
+      { "requires": "($advancements_widgets_resolution = 4096x)", "$widgets_uv": [ 416, 2048 ], "$widgets_uv_size": [ 416, 416 ] },
+      { "requires": "($advancements_widgets_resolution = 8192x)", "$widgets_uv": [ 832, 4096 ], "$widgets_uv_size": [ 832, 832 ] }
+    ]
+  }, 
+
+  "uncompleted_special_icon@advancements_java_dx.completed_icon": {
+    "variables": [
+      { "requires": "($advancements_widgets_resolution = 256x)",  "$widgets_uv": [ 26, 154 ], "$widgets_uv_size": [ 26, 26 ] },
+      { "requires": "($advancements_widgets_resolution = 512x)",  "$widgets_uv": [ 52, 308 ], "$widgets_uv_size": [ 52, 52 ] },
+      { "requires": "($advancements_widgets_resolution = 1024x)", "$widgets_uv": [ 104, 616 ], "$widgets_uv_size": [ 104, 104 ] },
+      { "requires": "($advancements_widgets_resolution = 2048x)", "$widgets_uv": [ 208, 1232 ], "$widgets_uv_size": [ 208, 208 ] },
+      { "requires": "($advancements_widgets_resolution = 4096x)", "$widgets_uv": [ 416, 2464 ], "$widgets_uv_size": [ 416, 416 ] },
+      { "requires": "($advancements_widgets_resolution = 8192x)", "$widgets_uv": [ 832, 4928 ], "$widgets_uv_size": [ 832, 832 ] }
+    ]
+  }, 
+  
+  /*//// Tabs ////*/
+
+  "left_tab_back": {
+    "type": "image",
+    "texture": "assets/minecraft/textures/gui/advancements/tabs",
+    "size": [ 28, 32 ],
+    "$tabs_uv|default": [ 0, 0 ],
+    "$tabs_uv_size|default": [ 0, 0 ],
+    "uv": "$tabs_uv",
+    "uv_size": "$tabs_uv_size",
+    "variables": [
+      { "requires": "($advancements_tabs_resolution = 256x)", "$tabs_uv_size":  [ 28, 32 ] },
+      { "requires": "($advancements_tabs_resolution = 512x)", "$tabs_uv_size":  [ 56, 64 ] },
+      { "requires": "($advancements_tabs_resolution = 1024x)", "$tabs_uv_size": [ 112, 128 ] },
+      { "requires": "($advancements_tabs_resolution = 2048x)", "$tabs_uv_size": [ 224, 256 ] },
+      { "requires": "($advancements_tabs_resolution = 4096x)", "$tabs_uv_size": [ 448, 512 ] },
+      { "requires": "($advancements_tabs_resolution = 8192x)", "$tabs_uv_size": [ 896, 1024 ] }
+    ]
+  }, 
+
+  "left_tab_front@advancements_java_dx.left_tab_back": {
+    "variables": [
+      { "requires": "($advancements_tabs_resolution = 256x)", "$tabs_uv": [ 0, 32 ], "$tabs_uv_size": [ 28, 32 ] },
+      { "requires": "($advancements_tabs_resolution = 512x)", "$tabs_uv": [ 0, 64 ], "$tabs_uv_size": [ 56, 64 ] },
+      { "requires": "($advancements_tabs_resolution = 1024x)", "$tabs_uv": [ 0, 128 ], "$tabs_uv_size": [ 112, 128 ] },
+      { "requires": "($advancements_tabs_resolution = 2048x)", "$tabs_uv": [ 0, 256 ], "$tabs_uv_size": [ 224, 256 ] },
+      { "requires": "($advancements_tabs_resolution = 4096x)", "$tabs_uv": [ 0, 512 ], "$tabs_uv_size": [ 448, 512 ] },
+      { "requires": "($advancements_tabs_resolution = 8192x)", "$tabs_uv": [ 0, 1024 ], "$tabs_uv_size": [ 896, 1024 ] }
+    ]
+  }, 
+
+  "middle_tab_back@advancements_java_dx.left_tab_back": {
+    "variables": [
+      { "requires": "($advancements_tabs_resolution = 256x)", "$tabs_uv": [ 28, 0 ], "$tabs_uv_size": [ 28, 32 ] },
+      { "requires": "($advancements_tabs_resolution = 512x)", "$tabs_uv": [ 56, 0 ], "$tabs_uv_size": [ 56, 64 ] },
+      { "requires": "($advancements_tabs_resolution = 1024x)", "$tabs_uv": [ 112, 0 ], "$tabs_uv_size": [ 112, 128 ] },
+      { "requires": "($advancements_tabs_resolution = 2048x)", "$tabs_uv": [ 224, 0 ], "$tabs_uv_size": [ 224, 256 ] },
+      { "requires": "($advancements_tabs_resolution = 4096x)", "$tabs_uv": [ 448, 0 ], "$tabs_uv_size": [ 448, 512 ] },
+      { "requires": "($advancements_tabs_resolution = 8192x)", "$tabs_uv": [ 896, 0 ], "$tabs_uv_size": [ 896, 1024 ] }
+    ]
+  }, 
+
+  "middle_tab_front@advancements_java_dx.left_tab_back": {
+    "variables": [
+      { "requires": "($advancements_tabs_resolution = 256x)", "$tabs_uv": [ 28, 32 ], "$tabs_uv_size": [ 28, 32 ] },
+      { "requires": "($advancements_tabs_resolution = 512x)", "$tabs_uv": [ 56, 64 ], "$tabs_uv_size": [ 56, 64 ] },
+      { "requires": "($advancements_tabs_resolution = 1024x)", "$tabs_uv": [ 112, 128 ], "$tabs_uv_size": [ 112, 128 ] },
+      { "requires": "($advancements_tabs_resolution = 2048x)", "$tabs_uv": [ 224, 256 ], "$tabs_uv_size": [ 224, 256 ] },
+      { "requires": "($advancements_tabs_resolution = 4096x)", "$tabs_uv": [ 448, 512 ], "$tabs_uv_size": [ 448, 512 ] },
+      { "requires": "($advancements_tabs_resolution = 8192x)", "$tabs_uv": [ 896, 1024 ], "$widgets_uv_size": [ 896, 1024 ] }
+    ]
+  }, 
+  
+  /*//// backgrounds ////*/
+
+  "adventure_bg": {
+    "type": "image",
+    "texture": "assets/minecraft/textures/gui/advancements/backgrounds/adventure",
+    "size": [ "100%", "100%" ],
+    "tiled": true,
+    "tiled_scale": "$adventure_bg_tiled_scale",
+    "variables": [
+      { "requires": "($adventure_background_resolution = 16x)", "$adventure_bg_tiled_scale":  [ 1.0, 1.0 ] },
+      { "requires": "($adventure_background_resolution = 32x)", "$adventure_bg_tiled_scale":  [ 0.5, 0.5 ] },
+      { "requires": "($adventure_background_resolution = 64x)", "$adventure_bg_tiled_scale":  [ 0.25, 0.25 ] },
+      { "requires": "($adventure_background_resolution = 128x)", "$adventure_bg_tiled_scale": [ 0.125, 0.125 ] },
+      { "requires": "($adventure_background_resolution = 256x)", "$adventure_bg_tiled_scale": [ 0.0625, 0.0625 ] },
+      { "requires": "($adventure_background_resolution = 512x)", "$adventure_bg_tiled_scale": [ 0.03125, 0.03125 ] }
+    ]
+  },
+
+  "end_bg@advancements_java_dx.adventure_bg": {
+    "texture": "assets/minecraft/textures/gui/advancements/backgrounds/end",
+    "tiled_scale": "$end_bg_tiled_scale",
+    "variables": [
+      { "requires": "($end_background_resolution = 16x)", "$end_bg_tiled_scale":  [ 1.0, 1.0 ] },
+      { "requires": "($end_background_resolution = 32x)", "$end_bg_tiled_scale":  [ 0.5, 0.5 ] },
+      { "requires": "($end_background_resolution = 64x)", "$end_bg_tiled_scale":  [ 0.25, 0.25 ] },
+      { "requires": "($end_background_resolution = 128x)", "$end_bg_tiled_scale": [ 0.125, 0.125 ] },
+      { "requires": "($end_background_resolution = 256x)", "$end_bg_tiled_scale": [ 0.0625, 0.0625 ] },
+      { "requires": "($end_background_resolution = 512x)", "$end_bg_tiled_scale": [ 0.03125, 0.03125 ] }
+    ]
+  },
+
+  "husbandry_bg@advancements_java_dx.adventure_bg": {
+    "texture": "assets/minecraft/textures/gui/advancements/backgrounds/husbandry",
+    "tiled_scale": "$end_bg_tiled_scale",
+    "variables": [
+      { "requires": "($husbandry_background_resolution = 16x)", "$husbandry_bg_tiled_scale":  [ 1.0, 1.0 ] },
+      { "requires": "($husbandry_background_resolution = 32x)", "$husbandry_bg_tiled_scale":  [ 0.5, 0.5 ] },
+      { "requires": "($husbandry_background_resolution = 64x)", "$husbandry_bg_tiled_scale":  [ 0.25, 0.25 ] },
+      { "requires": "($husbandry_background_resolution = 128x)", "$husbandry_bg_tiled_scale": [ 0.125, 0.125 ] },
+      { "requires": "($husbandry_background_resolution = 256x)", "$husbandry_bg_tiled_scale": [ 0.0625, 0.0625 ] },
+      { "requires": "($husbandry_background_resolution = 512x)", "$husbandry_bg_tiled_scale": [ 0.03125, 0.03125 ] }
+    ]
+  },
+
+  "nether_bg@advancements_java_dx.adventure_bg": {
+    "texture": "assets/minecraft/textures/gui/advancements/backgrounds/nether",
+    "tiled_scale": "$nether_bg_tiled_scale",
+    "variables": [
+      { "requires": "($nether_background_resolution = 16x)", "$nether_bg_tiled_scale":  [ 1.0, 1.0 ] },
+      { "requires": "($nether_background_resolution = 32x)", "$nether_bg_tiled_scale":  [ 0.5, 0.5 ] },
+      { "requires": "($nether_background_resolution = 64x)", "$nether_bg_tiled_scale":  [ 0.25, 0.25 ] },
+      { "requires": "($nether_background_resolution = 128x)", "$nether_bg_tiled_scale": [ 0.125, 0.125 ] },
+      { "requires": "($nether_background_resolution = 256x)", "$nether_bg_tiled_scale": [ 0.0625, 0.0625 ] },
+      { "requires": "($nether_background_resolution = 512x)", "$nether_bg_tiled_scale": [ 0.03125, 0.03125 ] }
+    ]
+  },
+
+  "stone_bg@advancements_java_dx.adventure_bg": {
+    "texture": "assets/minecraft/textures/gui/advancements/backgrounds/stone",
+    "tiled_scale": "$stone_bg_tiled_scale",
+    "variables": [
+      { "requires": "($stone_background_resolution = 16x)", "$stone_bg_tiled_scale":  [ 1.0, 1.0 ] },
+      { "requires": "($stone_background_resolution = 32x)", "$stone_bg_tiled_scale":  [ 0.5, 0.5 ] },
+      { "requires": "($stone_background_resolution = 64x)", "$stone_bg_tiled_scale":  [ 0.25, 0.25 ] },
+      { "requires": "($stone_background_resolution = 128x)", "$stone_bg_tiled_scale": [ 0.125, 0.125 ] },
+      { "requires": "($stone_background_resolution = 256x)", "$stone_bg_tiled_scale": [ 0.0625, 0.0625 ] },
+      { "requires": "($stone_background_resolution = 512x)", "$stone_bg_tiled_scale": [ 0.03125, 0.03125 ] }
+    ]
+  }
+}

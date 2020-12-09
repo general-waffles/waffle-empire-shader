@@ -1,0 +1,92 @@
+/*File modified by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "hotbar_slot_image": { "alpha": 1.0 },
+
+  "start_cap_image": { "alpha": 1.0 },
+
+  "end_cap_image": { "alpha": 1.0 },
+
+  "exp_progress_bar_and_hotbar_dx": {
+    "type": "panel",
+    "size": [ 182, 30 ],
+    "offset": [ 0, 0 ],
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "controls": [
+      {
+        "resizing_xp_bar_with_hotbar": {
+          "type": "panel",
+          "size": [ 182, 5 ],
+          "anchor_from": "bottom_left",
+          "anchor_to": "bottom_left",
+          "offset": [ 0, -24 ],
+          "controls": [
+            { "experience_bar_full@hud_dx.experience_bar_full": { } },
+            { "experience_bar_empty@hud_dx.experience_bar_empty": { } },
+            { "experience_bar_nub@hud_dx.experience_bar_nub": { } },
+            { "progress_text_label@hud_dx.xp_number_panel": { "layer": 8 } }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#is_not_creative_mode",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      { "hotbar@hud_dx.hotbar_panel": { } },
+      {
+        "item_text_factory": {
+          "type": "factory",
+          "size": [ 100, 10 ],
+          "control_ids": {
+            "survival_item_text": "@hud.survival_item_name_text",
+            "survival_item_text_above_interact_button": "@hud.survival_above_interact_button_item_text",
+            "survival_jukebox_text": "@hud.survival_jukebox_popup_text",
+            "survival_jukebox_text_above_interact_button": "@hud.survival_jukebox_above_interact_button_popup_text",
+            "creative_item_text": "@hud.creative_item_name_text",
+            "create_item_text_above_interact_button": "@hud.creative_above_interact_button_item_text",
+            "creative_jukebox_text": "@hud.creative_jukebox_popup_text",
+            "creative_jukebox_text_above_interact_button": "@hud.creative_jukebox_above_interact_button_popup_text"
+          }
+        }
+      }
+    ]
+  },
+
+  "chat_panel": {
+    "controls": [
+      { "empty@common.empty_panel": { } }
+    ]
+  },
+
+  "root_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          { "chat_stack_panel@hud_dx.chat_stack_panel": { "$original_mode": true } }
+        ]
+      }
+    ]
+  },
+
+  "centered_gui_elements_at_bottom_middle": {
+    "controls": [
+      { "gui_desktop@hud_dx.gui_desktop": { "offset": [ 0, 0 ] } },
+      { "exp_rend@hud.exp_progress_bar_and_hotbar_dx": {} }
+    ]
+  },
+
+  "gui_hotbar_grid_item/hotbar_parent": { "layer": 10 },
+
+  "hud_screen": {
+    "render_only_when_topmost": "(not $show_hud_while_inventory)",
+    "$use_loading_bars": false,
+    "$screen_animations": [ ],
+    "$background_animations": [ ],
+    "$screen_content": "hud_dx.hud_content"
+  }
+}

@@ -1,0 +1,86 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "blast_furnace_pages_dx",
+
+  /*//// All Pages ////*/
+
+  "all_page_1": {
+    "type": "stack_panel",
+    "size": [ 125, 100 ],
+    "controls": [
+      {
+        "row_1@furnace_pages_dx.stacked_row": {
+          "controls": [
+            { "item_7@cris_furnace_rb_items.item_7": { } },
+            { "item_8@cris_furnace_rb_items.item_8": { } },
+            { "item_13@cris_furnace_rb_items.item_13": { } },
+            { "item_23@cris_furnace_rb_items.item_23": { } },
+            { "item_26@cris_furnace_rb_items.item_26": { } }
+          ]
+        }
+      },
+      {
+        "row_2@furnace_pages_dx.stacked_row": {
+          "controls": [
+            { "item_29@cris_furnace_rb_items.item_29": { } },
+            { "item_31@cris_furnace_rb_items.item_31": { } },
+            { "item_36@cris_furnace_rb_items.item_36": { } },
+            { "item_41@cris_furnace_rb_items.item_41": { } },
+            { "item_42@cris_furnace_rb_items.item_42": { } }
+          ]
+        }
+      },
+      {
+        "row_3@furnace_pages_dx.stacked_row": {
+          "controls": [
+            { "item_47@cris_furnace_rb_items.item_47": {} }
+          ]
+        }
+      }
+    ]
+  },
+
+  /*//// Redstone Pages ////*/
+  
+  "redstone_page_1@furnace_pages_dx.all_page_1": {
+    "controls": [
+      {
+        "row_1@furnace_pages_dx.stacked_row": {
+          "controls": [
+            { "item_26@cris_furnace_rb_items.item_26": { "$toggle_group_forced_index": 74 } }
+          ]
+        }
+      }
+    ]
+  },
+
+  /*//// Materias Pages ////*/
+
+  "materials_page_1@furnace_pages_dx.all_page_1": {
+    "controls": [
+      {
+        "row_1@furnace_pages_dx.stacked_row": {
+          "controls": [
+            { "item_7@cris_furnace_rb_items.item_7": { "$toggle_group_forced_index": 91 } },
+            { "item_8@cris_furnace_rb_items.item_8": { "$toggle_group_forced_index": 92 } },
+            { "item_13@cris_furnace_rb_items.item_13": { "$toggle_group_forced_index": 95 } },
+            { "item_23@cris_furnace_rb_items.item_23": { "$toggle_group_forced_index": 99 } },
+            { "item_29@cris_furnace_rb_items.item_29": { "$toggle_group_forced_index": 100 } }
+          ]
+        }
+      },
+      {
+        "row_2@furnace_pages_dx.stacked_row": {
+          "controls": [
+            { "item_31@cris_furnace_rb_items.item_31": { "$toggle_group_forced_index": 101 } },
+            { "item_36@cris_furnace_rb_items.item_36": { "$toggle_group_forced_index": 102 } },
+            { "item_41@cris_furnace_rb_items.item_41": { "$toggle_group_forced_index": 103 } },
+            { "item_42@cris_furnace_rb_items.item_42": { "$toggle_group_forced_index": 104 } },
+            { "item_47@cris_furnace_rb_items.item_47": { "$toggle_group_forced_index": 105 } }
+          ]
+        }
+      }
+    ]
+  }
+}

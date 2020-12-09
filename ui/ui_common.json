@@ -1,0 +1,17 @@
+{
+  "container_slot_button_prototype": {
+    "consume_hover_events": false
+  },
+
+  "slot_selected": {
+    "texture": "$slot_selected_texture",
+    "$slot_selected_texture|default": "textures/ui/pocket_ui_highlight_selected_slot"
+  },
+
+  "item_lock_cell_image": {
+    "texture": "$item_lock_cell_texture",
+    "size": "$item_lock_cell_size",
+    "$item_lock_cell_size|default": [ "100%", "100%" ],
+    "$item_lock_cell_texture|default": "textures/ui/cell_image_lock"
+  }
+}

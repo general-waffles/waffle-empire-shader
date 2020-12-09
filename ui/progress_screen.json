@@ -1,0 +1,59 @@
+/*File modified by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "realms_loading_progress_screen": {
+    "$screen_bg_content": "java_gui_common.options_background",
+    "$screen_content": "progress_dx.world_dimension_progress_screen_content",
+    "$use_loading_bars": false,
+    "$screen_animations": [ ],
+    "$background_animations": [ ]
+  },
+
+  "world_loading_progress_screen": {
+    "$screen_bg_content": "java_gui_common.options_background",
+    "$screen_content": "progress_dx.world_loading_progress_screen_content",
+    "$use_loading_bars": false,
+    "$screen_animations": [ ],
+    "$background_animations": [ ]
+  },
+
+  "overworld_loading_progress_screen": {
+    "$screen_bg_content": "progress_dx.overworld_loading_background",
+    "$screen_content": "progress_dx.world_dimension_progress_screen_content",
+    "$use_loading_bars": false,
+    "$screen_animations": [ ],
+    "$background_animations": [ ]
+  },
+
+  "nether_loading_progress_screen": {
+    "$screen_bg_content": "progress_dx.nether_loading_background",
+    "$screen_content": "progress_dx.world_dimension_progress_screen_content",
+    "$use_loading_bars": false,
+    "$screen_animations": [ ],
+    "$background_animations": [ ]
+  },
+
+  "theend_loading_progress_screen": {
+    "$screen_bg_content": "progress_dx.theend_loading_background",
+    "$screen_content": "progress_dx.world_dimension_progress_screen_content",
+    "$use_loading_bars": false,
+    "$screen_animations": [ ],
+    "$background_animations": [ ]
+  },
+
+  "world_saving_progress_screen": {
+    "$screen_bg_content": "java_gui_common.options_background",
+    "$screen_content": "progress_dx.world_saving_progress_screen_content",
+    "$use_loading_bars": false,
+    "$screen_animations": [ ],
+    "$background_animations": [ ]
+  },
+
+  "world_convert_modal_progress_screen": {
+    "$screen_bg_content": "java_gui_common.options_background",
+    "$screen_content": "progress_dx.world_loading_progress_screen_content",
+    "$use_loading_bars": false,
+    "$screen_animations": [ ],
+    "$background_animations": [ ]
+  }
+}

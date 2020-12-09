@@ -1,0 +1,778 @@
+
+
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "achievement_dx",
+
+  "tab_gamepad_helper_panel@creative_dx.tab_front_navigation_panel": {
+    "size": [ 60, 32 ],
+    "controls": [
+      {
+        "gamepad_helper_left_bumper@common.gamepad_helper_left_bumper": {
+          "offset": [ -27, 3 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "$hide_description": true
+        }
+      },
+      {
+        "gamepad_helper_right_bumper@common.gamepad_helper_right_bumper": {
+          "offset": [ 27, 3 ],
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "$hide_description": true
+        }
+      }
+    ]
+  },
+  
+  /*//// Tabs ////*/
+  
+  "main_icon@recipe_book_dx.item_renderer": {
+    "property_bag": {
+      "#item_id_aux": 131072
+    }
+  },
+
+  "total_stats_icon@recipe_book_dx.item_renderer": {
+    "property_bag": {
+      "#item_id_aux": 22216704
+    }
+  },
+
+  "tab_icons_navigation_panel@creative_dx.tab_front_navigation_panel": {
+    "layer": 200,
+    "controls": [
+      {
+        "top_stack_panel": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": [ 195, 28 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "controls": [
+            { "main_tab_icon@creative_dx.tab_icon": { "$tab_icon": "achievement_dx.main_icon" } },
+            { "fill_panel_0": { "type": "panel", "size": [ 4, 28 ] } },
+            { "total_stats_tab_icon@creative_dx.tab_icon": { "$tab_icon": "achievement_dx.total_stats_icon" } },
+            { "fill_panel_1": { "type": "panel", "size": [ "fill", 28 ] } }
+          ]
+        }
+      }
+    ]
+  },
+
+  "top_tab@creative_dx.creative_tab": {
+    "$unchecked_control": "empty",
+    "$unchecked_hover_control": "empty",
+    "$toggle_focus_enabled": false,
+    "$radio_toggle_group": true,
+    "$toggle_group_default_selected": 0,
+    "$toggle_binding_type": "global"
+  },
+
+  "main_tab_front@advancements_java_dx.left_tab_front": {
+    "anchor_from": "top_left",
+    "anchor_to": "top_left"
+  },
+
+  "main_tab@achievement_dx.top_tab": {
+    "$checked_control": "achievement_dx.main_tab_front",
+    "$checked_hover_control": "achievement_dx.main_tab_front",
+
+    "$tab_view_binding_name": "main_tab_toggle",
+    "$toggle_default_state": true,
+    "$toggle_group_forced_index": 0
+  },
+
+  "total_stats_tab_front@advancements_java_dx.middle_tab_front": {
+    "anchor_from": "top_left",
+    "anchor_to": "top_left"
+  },
+  
+  "total_stats_tab@achievement_dx.top_tab": {
+    "$checked_control": "achievement_dx.total_stats_tab_front",
+    "$checked_hover_control": "achievement_dx.total_stats_tab_front",
+
+    "$tab_view_binding_name": "total_stats_tab_toggle",
+    "$toggle_group_forced_index": 1
+  },
+
+  "tab_front_navigation_panel@creative_dx.tab_front_navigation_panel": {
+    "layer": 190,
+    "controls": [
+      {
+        "top_stack_panel": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": [ 195, 28 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "controls": [
+            { "main_tab@achievement_dx.main_tab": { } },
+            { "fill_panel_0": { "type": "panel", "size": [ 4, 28 ] } },
+            { "total_stats_tab@achievement_dx.total_stats_tab": { } },
+            { "fill_panel_1": { "type": "panel", "size": [ "fill", 28 ] } }
+          ]
+        }
+      }
+    ]
+  },
+
+  "tab_back@creative_dx.tab_back": {
+    "controls": [
+      {
+        "tab_back@$back_texture": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "$tab_back_binding_name",
+              "source_property_name": "(not #toggle_state)",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "main_tab_back@achievement_dx.tab_back": {
+    "$back_texture": "advancements_java_dx.left_tab_back",
+    "$tab_back_binding_name": "main_tab_toggle"
+  },
+
+  "total_stats_tab_back@achievement_dx.tab_back": {
+    "$back_texture": "advancements_java_dx.middle_tab_back",
+    "$tab_back_binding_name": "total_stats_tab_toggle"
+  },
+
+  "tab_back_navigation_panel@creative_dx.tab_front_navigation_panel": {
+    "layer": -2,
+    "controls": [
+      {
+        "top_stack_panel": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": [ 195, 28 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "controls": [
+            { "main_tab_back@achievement_dx.main_tab_back": { } },
+            { "fill_panel_0": { "type": "panel", "size": [ 4, 28 ] } },
+            { "total_stats_tab_back@achievement_dx.total_stats_tab_back": { } },
+            { "fill_panel_1": { "type": "panel", "size": [ "fill", 28 ] } }
+          ]
+        }
+      }
+    ]
+  },
+  
+  /*//// Content Panel ////*/
+
+  "description_animation_panel": {
+    "type": "panel",
+    "controls": [
+      {
+        "achiev_desc@achievement.achievement_desc": {
+          "alpha": "@achievement_dx.desc_1",
+          "size": [ "100%-10px", "default" ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [ 5, 25 ],
+          "layer": 8
+        }
+      },
+      {
+        "gamer_score_icon@achievement.gamer_score_icon": {
+          "alpha": "@achievement_dx.desc_2",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [ 5, 25 ],
+          "size": [ 11, 11 ],
+          "layer": 8
+        }
+      },
+      {
+        "achievement_gamer_score_value@achievement.achievement_gamer_score_value": {
+          "alpha": "@achievement_dx.desc_2",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [ 20, 25 ],
+          "layer": 8
+        }
+      },
+      {
+        "reward_panel": {
+          "type": "panel",
+          "$item_binding_type": "collection",
+          "$item_collection_name": "achievement_list",
+          "bindings": [
+            {
+              "binding_type": "$item_binding_type",
+              "binding_collection_name": "$item_collection_name",
+              "binding_name": "#has_persona_reward",
+              "binding_name_override": "#visible"
+            }
+          ],
+          "controls": [
+            { 
+              "reward_label@achievement.persona_reward_label": {
+                "size": [ "default", "default" ],
+                "alpha": "@achievement_dx.desc_2",
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "offset": [ -40, 25 ],
+                "layer": 8
+              }
+            },
+            {
+              "reward_image_info@persona_common.item_display": {
+                "size": [ 32, 32 ],
+                "alpha": "@achievement_dx.desc_2",
+                "propagate_alpha": true,
+                "$item_display_size": [ "100%", "fill" ],
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "offset": [ -5, 25 ],
+                "$item_content_control": "achievement.persona_item_content",
+                "$item_texture_file_system_binding_name": "#thumbnail_texture_file_system",
+                "$item_texture_path_binding_name": "#thumbnail_texture_path"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "desc_1": {
+    "anim_type": "alpha",
+    "easing": "linear",
+    "destroy_at_end": "item_text_label",
+    "duration": 10,
+    "from": 1.0,
+    "to": 1.0,
+    "next": "@achievement_dx.desc_2"
+  },
+
+  "desc_2": {
+    "anim_type": "alpha",
+    "easing": "linear",
+    "destroy_at_end": "item_text_label",
+    "duration": 10,
+    "from": 0,
+    "to": 0,
+    "next": "@achievement_dx.desc_1"
+  },
+
+  "description_panel": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "ignored": "(not $is_hover)",
+    "controls": [
+      {
+        "description_animation_panel@achievement_dx.description_animation_panel": { }
+      },
+      {
+        "top": {
+          "type": "panel",
+          "size": [ "100%", 21 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "clips_children": true,
+          "allow_clipping": true,
+          "controls": [
+            { 
+              "description@advancements_java_dx.description": {
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "middle": {
+          "type": "stack_panel",
+          "size": [ "100%", "100%-42px" ],
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle",
+          "controls": [
+            {
+              "middle_0": {
+                "type": "panel",
+                "size": [ "100%", 16 ],
+                "clips_children": true,
+                "allow_clipping": true,
+                "controls": [
+                  { 
+                    "description@advancements_java_dx.description": {
+                      "layer": 1,
+                      "anchor_from": "left_middle",
+                      "anchor_to": "left_middle"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "middle_1": {
+                "type": "panel",
+                "size": [ "100%", 16 ],
+                "clips_children": true,
+                "allow_clipping": true,
+                "controls": [
+                  { 
+                    "description@advancements_java_dx.description": {
+                      "layer": 1,
+                      "anchor_from": "left_middle",
+                      "anchor_to": "left_middle"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "bottom": {
+          "type": "panel",
+          "size": [ "100%", 21 ],
+          "anchor_from": "bottom_left",
+          "anchor_to": "bottom_left",
+          "clips_children": true,
+          "allow_clipping": true,
+          "controls": [
+            { 
+              "description@advancements_java_dx.description": {
+                "layer": 1,
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "icon_panel": {
+    "type": "panel",
+    "size": [ 16, 16 ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset": [ 8, 5 ],
+    "clips_children": true,
+    "allow_clipping": true,
+    "controls": [
+      {
+        "icon_image@achievement.achievement_icon": {
+          "layer": 8,
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [ -39, -9 ],
+          "size": [ 64, 36 ]
+        }
+      }
+    ]
+  },
+
+  "achievement_grid_panel": {
+    "type": "panel",
+    "size": [ 200, 64 ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset": [ 4, 0 ],
+    "$is_hover|default": false,
+    "controls": [
+      {
+        "achievement_title@achievement.achievement_title": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [ 32, 8 ],
+          "shadow": true,
+          "layer": 6
+        }
+      },
+      {
+        "icon_border": {
+          "type": "image",
+          "layer": 6,
+          "ignored": true,
+          "texture": "textures/uidx/focus_border_white",
+          "color": [ 0.0, 0.0, 0.0 ],
+          "size": [ 18, 18 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [ 7, 4 ]
+        }
+      },
+      { "icon_panel@achievement_dx.icon_panel": { } },
+      { "description_panel@achievement_dx.description_panel": { } },
+      {
+        "unlocked_panel": {
+          "type": "panel",
+          "visible": "#is_unlocked",
+          "bindings": [
+            {
+              "binding_name": "#is_unlocked",
+              "binding_name_override": "#visible",
+              "binding_type": "collection",
+              "binding_collection_name": "achievement_list"
+            }
+          ],
+          "controls": [
+            { 
+              "completed_title@advancements_java_dx.completed_title": {
+                "layer": 2,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left"
+              }
+            },
+            { 
+              "completed_icon@advancements_java_dx.completed_icon": {
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [ 3, 0 ],
+                "bindings": [
+                  {
+                    "binding_type": "collection",
+                    "binding_collection_name": "achievement_list",
+                    "binding_name": "(not #has_persona_reward)",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            { 
+              "completed_special_icon@advancements_java_dx.completed_special_icon": {
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [ 3, 0 ],
+                "bindings": [
+                  {
+                    "binding_type": "collection",
+                    "binding_collection_name": "achievement_list",
+                    "binding_name": "#has_persona_reward",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "locked_panel": {
+          "type": "panel",
+          "visible": "#is_locked",
+          "bindings": [
+            {
+              "binding_name": "#is_locked",
+              "binding_name_override": "#visible",
+              "binding_type": "collection",
+              "binding_collection_name": "achievement_list"
+            }
+          ],
+          "controls": [
+            { 
+              "uncompleted_title@advancements_java_dx.uncompleted_title": {
+                "layer": 2,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left"
+              }
+            },
+            { 
+              "completed_title@advancements_java_dx.completed_title": {
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "clip_direction": "left",
+                "clip_pixelperfect": false,
+                "bindings": [
+                  {
+                    "binding_name": "#progress_percentage",
+                    "binding_name_override": "#clip_ratio",
+                    "binding_type": "collection",
+                    "binding_collection_name": "achievement_list"
+                  }
+                ]
+              }
+            },
+            { 
+              "uncompleted_icon@advancements_java_dx.uncompleted_icon": {
+                "layer": 4,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [ 3, 0 ],
+                "bindings": [
+                  {
+                    "binding_type": "collection",
+                    "binding_collection_name": "achievement_list",
+                    "binding_name": "(not #has_persona_reward)",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            { 
+              "uncompleted_special_icon@advancements_java_dx.uncompleted_special_icon": {
+                "layer": 3,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [ 3, 0 ],
+                "bindings": [
+                  {
+                    "binding_type": "collection",
+                    "binding_collection_name": "achievement_list",
+                    "binding_name": "#has_persona_reward",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "achievement_grid_item": {
+    "type": "panel",
+    "size": [ "100%", 26 ],
+    "controls": [
+      {
+        "achievement_button@common.button": {
+          "size": [ "100%-24px", 26 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "$pressed_button_name": "button.navigate_to_persona",
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "achievement_list",
+              "binding_collection_prefix": "achievement_list"
+            }
+          ],
+          "controls": [
+            { "default@achievement_dx.achievement_grid_panel": { } },
+            { "hover@achievement_dx.achievement_grid_panel": { "$is_hover": true, "layer": 100 } },
+            { "pressed@achievement_dx.achievement_grid_panel": { "$is_hover": true, "layer": 100 } }
+          ]
+        }
+      }
+    ]
+  },
+
+  "inside_panel": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%c" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "controls": [
+      {
+        "top_padding": {
+          "type": "panel",
+          "size": [ "100%", 4 ],
+          "controls": [
+            { "stone_bg@advancements_java_dx.stone_bg": { "size": [ "100%", 15000 ], "layer": 1 } }
+          ]
+        }
+      },
+      {
+        "achievement_grid@achievement.achievement_list_grid": {
+          "grid_item_template": "achievement_dx.achievement_grid_item",
+          "layer": 2
+        }
+      },
+      {
+        "bottom_padding": {
+          "type": "panel",
+          "size": [ "100%", 48 ]
+        }
+      }
+    ]
+  },
+
+  "achievement_panel": {
+    "type": "panel",
+    "size": [ 252, 140 ],
+    "controls": [
+      { "tab_front_navigation_panel@achievement_dx.tab_front_navigation_panel": { } },
+      { "tab_back_navigation_panel@achievement_dx.tab_back_navigation_panel": { } },
+      { "tab_icons_navigation_panel@achievement_dx.tab_icons_navigation_panel": { } },
+      { "tab_gamepad_helper_panel@achievement_dx.tab_gamepad_helper_panel": { } },
+      {
+        "title_panel@anvil.title_label": {
+          "text": "gui.achievements",
+          "layer": 155,
+          "offset": [ 8, 5 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left"
+        }
+      },
+      { "dialog_bg_advancements@advancements_java_dx.dialog_bg_advancements": { "layer": 150 } },
+      {
+        "achievement_scrolling_panel@common_scroll_dx.scrolling_panel": {
+          "anchor_to": "top_left",
+          "anchor_from": "top_left",
+          "offset": [ 9, 18 ],
+          "size": [ 234, 113 ],
+          "$scroll_view_port_size": [ 228, "100%" ],
+          "$scrolling_pane_size": [ "100%", "100%" ],
+          "$scroll_bar_contained|default": true,
+          "$scroll_background_image_control": "",
+          "$scroll_size": [ 6, "100%" ],
+          "$scroll_offset": [ 0, 0 ],
+          "$scroll_track_image_control": "common_menus_dx.java_scroll_track",
+          "$scroll_box_mouse_image_control": "common_menus_dx.java_scroll_box",
+          "$scrolling_content": "achievement_dx.inside_panel",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "main_tab_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "object_name": {
+          "type": "image",
+          "texture": "textures/uidx/white",
+          "color": [ 0.0, 0.0, 0.0 ],
+          "anchor_to": "top_left",
+          "anchor_from": "top_left",
+          "offset": [ 9, 18 ],
+          "size": [ 234, 113 ],
+          "controls": [
+            {
+              "player_stat_panel": {
+                "type": "stack_panel",
+                "layer": 10,
+                "size": [ "100%", "100%" ],
+                "controls": [
+                  {
+                    "top_padding": {
+                      "type": "panel",
+                      "size": [ "100%", 20 ]
+                    }
+                  },
+                  {
+                    "trophy_padding": {
+                      "type": "panel",
+                      "size": [ "100%", 32 ],
+                      "controls": [
+                        {
+                          "trophy_icon_0@achievement.trophy_icon": {
+                            "layer": 3,
+                            "size": [ 36, 48 ],
+                            "anchor_from": "bottom_middle",
+                            "anchor_to": "bottom_middle",
+                            "color": [ 0.545, 0.745, 0.384 ],
+                            "clip_direction": "down",
+                            "controls": [
+                  
+                            ],
+                            "bindings": [
+                              {
+                                "binding_name": "#trophy_progress_percentage",
+                                "binding_name_override": "#clip_ratio"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "trophy_icon_1@achievement.trophy_icon": {
+                            "layer": 2,
+                            "size": [ 36, 48 ],
+                            "anchor_from": "bottom_middle",
+                            "anchor_to": "bottom_middle",
+                            "color": [ 1.0, 1.0, 1.0 ]
+                          }
+                        },
+                        {
+                          "percentage_label@achievement.percentage_label": {
+                            "anchor_from": "bottom_middle",
+                            "anchor_to": "bottom_middle",
+                            "offset": [ 0, 12 ],
+                            "layer": 4
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "middle_padding": {
+                      "type": "panel",
+                      "size": [ "100%", "fill" ]
+                    }
+                  },
+                  {
+                    "scores@achievement.player_scores_banner": {
+                      "size": [ "100%", 48 ]
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "total_stats_tab_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  
+  /*//// Screen Panel ////*/
+
+  "main_screen_content": {
+    "type": "input_panel",
+    "controls": [
+      { "achievement_panel@achievement_dx.achievement_panel": { } }
+    ],
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_tab_left",
+        "to_button_id": "button.menu_tab_left",
+        "mapping_type": "global",
+        "scope": "view"
+      },
+      {
+        "from_button_id": "button.menu_tab_right",
+        "to_button_id": "button.menu_tab_right",
+        "mapping_type": "global",
+        "scope": "view"
+      }
+    ]
+  },
+
+  "center_screen": {
+    "type": "panel",
+    "controls": [
+      { "top_buttons@chat_dx.top_buttons": { } },
+      { "screen_background@java_gui_common.screen_background": { "layer": -10, "ignored": "(not $is_holographic)" } }
+    ]
+  },
+
+  "full_screen": {
+    "type": "panel",
+    "controls": [
+      { "main_screen_content@achievement_dx.main_screen_content": { } },
+      { "screen_background@java_gui_common.screen_background": { "layer": -10, "ignored": "$is_holographic" } }
+    ]
+  }
+}
